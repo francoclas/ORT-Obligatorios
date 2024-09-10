@@ -1,0 +1,55 @@
+﻿@model Biblioteca.Partido
+@{ @ViewBag.partido
+ViewData["Title"] = "FinalizarPartido";
+}
+
+<h1>Se finalizo el partido</h1>
+
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.IdPartido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.IdPartido)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaPartido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FechaPartido)
+        </dd>
+        <dt class="col-sm-2">
+            Seleccion Local
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SeleccionLocal.Pais.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            Seleccion Visitante
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.SeleccionVisitante.Pais.Nombre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Ganador)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ganador)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Resultado)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Res)
+        </dd>
+        </dd>
+        <dt class="col-sm-2">
+            Estado
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.EstadoPartido)
+        </dd>
+    </dl>
+</div>
+

@@ -1,0 +1,99 @@
+db.createColletion("KiterComentarios")
+db.KiterComentarios.insertOne({
+	"KiterID": 1,
+	"Comentario": "Es un capo el pibe yo lo re banco.",
+	"Usuario": "Terreneitor" ,
+	"Fecha": "2022-09-12"
+})
+db.KiterComentarios.insertOne({
+	"KiterID": 1,
+	"Comentario": "Na yo lo vi en el torneo de brasil, se cae a pedazos",
+	"Usuario": "Liquideitor" ,
+	"Fecha": "2022-09-12"
+})
+db.KiterComentarios.insertOne({
+	"KiterID": 3,
+	"Comentario": "Saco maximo puntaje en 3 competencias, es una campeona.",
+	"Usuario": "PozoAlcatraz" ,
+	"Fecha": "2019-01-23"
+})
+db.KiterComentarios.insertOne({
+	"KiterID": 6,
+	"Comentario": "Debe ser mentira que hace kite con un brazo robot",
+	"Usuario": "KAwasakiElregreso" ,
+	"Fecha": "2021-05-31"
+})
+db.KiterComentarios.insertOne({
+	"KiterID": 6,
+	"Comentario": "El pibe yo robot le gana al oxido del mar un capo",
+	"Usuario": "Califragico" ,
+	"Fecha": "2021-06-05"
+})
+db.KiterComentarios.insertOne({
+	"KiterID": 6,
+	"Comentario": "No le gana nadie al pibe aleacion the goat",
+	"Usuario": "Califragico" ,
+	"Fecha": "2021-06-10"
+})
+db.KiterComentarios.insertOne({
+	"KiterID": 4,
+	"Comentario": "Malardo el wachin le faltan años",
+	"Usuario": "ELhaterdouglas" ,
+	"Fecha": "2021-06-10"
+})
+db.KiterComentarios.insertOne({
+	"KiterID": 1,
+	"Comentario": "Si si si este sabe",
+	"Usuario": "Alejandria" ,
+	"Fecha": "2021-06-10"
+})
+db.KiterComentarios.insertOne({
+	"KiterID": 4,
+	"Comentario": "Es un trapo mojado ",
+	"Usuario": "Alejandria" ,
+	"Fecha": "2021-06-10"
+})
+db.KiterComentarios.insertOne({
+	"KiterID": 5,
+	"Comentario": "Yo no se como dejan competir a esto",
+	"Usuario": "ELhaterdouglas" ,
+	"Fecha": "2023-01-19"
+})
+
+
+db.KiterComentarios.insertOne({
+	"Usuario": "ELhaterdouglas",
+	"Correo":"lolero@lol.com",
+	"Edad": 22
+})
+db.KiterComentarios.insertOne({
+	"Usuario": "Alejandria",
+	"Correo":"alexa@yahoo.com",
+	"Edad": 34
+})
+db.KiterComentarios.insertOne({
+	"Usuario": "Califragico",
+	"Correo":"sionoCali@gmail.com",
+	"Edad": 19
+})
+db.KiterComentarios.insertOne({
+	"Usuario": "KAwasakiElregreso",
+	"Correo":"lamotoraBack@hotmail.com",
+	"Edad": 23
+})
+db.KiterComentarios.insertOne({
+	"Usuario": "Liquideitor",
+	"Correo":"NoesRealElcorreo@falso.com",
+	"Edad": 10
+})
+db.KiterComentarios.insertOne({
+	"Usuario": "Terreneitor",
+	"Correo":"NoesRealElcorreo@falso.com",
+	"Edad": 21
+})
+
+db.KiterComentarios.insertOne({
+	"Usuario": "PozoAlcatraz" ,
+	"Correo":"pzaAlc@outlook.com",
+	"Edad": 54
+})

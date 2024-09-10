@@ -1,0 +1,32 @@
+﻿@using Biblioteca.Clases
+@{
+    List<ResenaPartido> R = ViewBag.Lista;
+    ViewData["Title"] = "VistaListaResenas";
+}
+<h1>Resultado</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Fecha de la reseña</th>
+            <th>Grupo</th>
+            <th>Seleccion local</th>
+            <th>Seleccion visitante</th>
+            <th>Titulo</th>
+            <th>Contenido</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{foreach (var item in R)
+            {
+                <tr>
+                    <td>@item.R.FechaRes</td>
+                    <td>@item.P.SeleccionLocal.Pais.Nombre</td>
+                    <td>@item.P.SeleccionVisitante.Pais.Nombre</td>
+                    <td>@item.R.TituloRes</td>
+                    <td>@item.R.DescRes</td>
+                </tr>
+            }
+
+        }
+    <tbody/>
+</table>

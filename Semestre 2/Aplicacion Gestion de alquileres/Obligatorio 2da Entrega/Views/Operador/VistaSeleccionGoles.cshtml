@@ -1,0 +1,43 @@
+﻿ @model List<string>
+@{
+    ViewData["Title"] = "VistaSeleccionGoles";
+}
+
+@{
+    if (Model.Count > 1)
+    {
+        <h1>Selecciones con mas goles</h1>
+    }
+    else
+    {
+        <h1>Seleccion con mas goles</h1>
+    }
+
+    } 
+<table class="table">
+    <thead>
+        <tr>
+             @{if (Model.Count > 1)
+                {
+                    <th>Selecciones</th>
+                }
+                else
+                {
+                    <th>Seleccion</th>
+                }
+            }
+
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item</td>
+                </tr>
+            }
+
+        }
+    <tbody />
+</table>

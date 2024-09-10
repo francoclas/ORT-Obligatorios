@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Biblioteca.Seleccion>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Inicio</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Seleccion</th>
+            <th>Jugadores</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Pais.Nombre)</td>
+                <td>@Html.DisplayFor(modelItem => item.ListaJugadores)</td>
+            </tr>
+        }
+    </tbody>
+</table>

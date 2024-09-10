@@ -1,0 +1,85 @@
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.csproj.AssemblyReference.cache
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.AssemblyInfoInputs.cache
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.AssemblyInfo.cs
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.csproj.CoreCompileInputs.cache
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.exe
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.deps.json
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.runtimeconfig.json
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.runtimeconfig.dev.json
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.dll
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.pdb
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Biblioteca.dll
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Biblioteca.pdb
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.csproj.CopyComplete
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.dll
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.pdb
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.genruntimeconfig.cache
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.csproj.AssemblyReference.cache
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.AssemblyInfoInputs.cache
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.AssemblyInfo.cs
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.csproj.CoreCompileInputs.cache
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.dll
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.pdb
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.exe
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.deps.json
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.runtimeconfig.json
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.runtimeconfig.dev.json
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.dll
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.pdb
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Biblioteca.dll
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Biblioteca.pdb
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.csproj.CopyComplete
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Obligatorio\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.genruntimeconfig.cache
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.exe
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.deps.json
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.runtimeconfig.json
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.runtimeconfig.dev.json
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.dll
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.pdb
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Biblioteca.dll
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Biblioteca.pdb
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.csproj.AssemblyReference.cache
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.AssemblyInfoInputs.cache
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.AssemblyInfo.cs
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.csproj.CoreCompileInputs.cache
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.csproj.CopyComplete
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.dll
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.pdb
+C:\Users\franc\Desktop\ORT\Segundo Semestre\Programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.genruntimeconfig.cache
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.exe
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.deps.json
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.runtimeconfig.json
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.runtimeconfig.dev.json
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.dll
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.pdb
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Biblioteca.dll
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Biblioteca.pdb
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.csproj.AssemblyReference.cache
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.AssemblyInfoInputs.cache
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.AssemblyInfo.cs
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.csproj.CoreCompileInputs.cache
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.csproj.CopyComplete
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.dll
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.pdb
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio\Programa\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.genruntimeconfig.cache
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio 2\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.exe
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio 2\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.deps.json
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio 2\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.runtimeconfig.json
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio 2\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.runtimeconfig.dev.json
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio 2\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.dll
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio 2\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.pdb
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio 2\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Biblioteca.dll
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio 2\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\bin\Debug\netcoreapp3.1\Biblioteca.pdb
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio 2\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.csproj.AssemblyReference.cache
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio 2\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio 2\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.AssemblyInfoInputs.cache
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio 2\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.AssemblyInfo.cs
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio 2\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.csproj.CoreCompileInputs.cache
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio 2\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.csproj.CopyComplete
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio 2\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.dll
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio 2\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.pdb
+C:\Users\frgomez\Desktop\ort\Semestre 2\programacion\Obligatorio 2\Obligatorio-1Er Entrega\Obligatorio-1Er Entrega\obj\Debug\netcoreapp3.1\Obligatorio-1Er Entrega.genruntimeconfig.cache

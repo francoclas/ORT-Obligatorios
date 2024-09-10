@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Biblioteca.Partido>
+
+@{
+    ViewData["Title"] = "VistaResultadoCorreo";
+}
+
+<h1>VistaResultadoCorreo</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPartido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaPartido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Resultado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.EstadoPartido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ganador)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPartido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaPartido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Resultado)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoPartido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ganador)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Biblioteca.Seleccion>
+
+@{
+    ViewData["Title"] = "VistaSelecciones";
+}
+
+<h1>Selecciones</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Seleccion</th>
+            <th>Jugadores</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>@Html.DisplayFor(model => item.Pais.Nombre)</td>
+                <td>@Html.DisplayFor(model => item.ListaJugadores)</td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Biblioteca.Partido>
+@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "VistaPartidosFecha";
+
+}
+
+<h1>Resultados encontrados</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IdPartido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaPartido)
+            </th>
+            <th>
+                Seleccion Local
+            </th>
+            <th>
+                Seleccion Visitante
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPartido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaPartido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeleccionLocal.Pais.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeleccionVisitante.Pais.Nombre)
+            </td>
+                <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

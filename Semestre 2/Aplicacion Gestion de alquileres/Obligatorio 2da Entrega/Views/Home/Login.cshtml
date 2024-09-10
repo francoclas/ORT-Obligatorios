@@ -1,0 +1,20 @@
+﻿<div class="col-sm-6">
+    @if (ViewBag.Mensaje != null)
+    {
+        if (ViewBag.TipoMensaje == "ERROR")
+        {
+            <div class="alert alert-danger" role="alert">@ViewBag.Mensaje</div>
+        }
+    }
+</div>
+<form asp-action="Login" asp-controller="Home" method="post">
+    <div class="form-group col-sm-6">
+        <label for="txtUser">Usuario</label>
+        <input class="form-control" type="text" name="txtUser" placeholder="Ingrese su usuario..." required />
+    </div>
+    <div class="form-group col-sm-6">
+        <label for="txtPassword">Contraseña</label>
+        <input class="form-control" type="password" name="txtPassword" placeholder="Ingrese su contraseña..." required />
+    </div>
+    <input class="btn btn-primary" type="submit" value="Iniciar sesión" />
+</form>

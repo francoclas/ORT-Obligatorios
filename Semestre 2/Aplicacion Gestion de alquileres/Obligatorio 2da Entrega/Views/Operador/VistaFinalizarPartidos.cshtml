@@ -1,0 +1,54 @@
+﻿@model IEnumerable<Biblioteca.Partido>
+
+@{
+    ViewData["Title"] = "VistaFinalizarPartidos";
+}
+
+<h1>Se visualiza unicamente partidos pendientes de finalizar</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Id
+            </th>
+            <th>
+                Fecha
+            </th>
+            <th>
+                Local
+            </th>
+            <th>
+                Visitante
+            </th>
+            <th>
+                Estado
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdPartido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaPartido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeleccionLocal.Pais.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeleccionVisitante.Pais.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoPartido)
+            </td>
+            <td>
+                @Html.ActionLink("Finalizar", "FinalizarPartido", new { idPartido = item.IdPartido })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

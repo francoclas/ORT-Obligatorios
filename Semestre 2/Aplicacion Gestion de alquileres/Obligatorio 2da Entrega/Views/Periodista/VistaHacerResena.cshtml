@@ -1,0 +1,34 @@
+﻿
+@using Microsoft.AspNetCore.Http;
+@{
+    ViewData["Title"] = "VistaHacerResena";
+}
+
+<h1>Generar una nueva reseña</h1>
+
+<h4>Reseña de @ViewBag.Partido</h4>
+<hr />
+
+
+<div class="row">
+
+    <form action="VistaHacerResena" method="Post">
+        <input type="number" name="idPartido" hidden value="@ViewBag.id">
+        <label for="TituloRes">Ingrese titulo de la reseña</label>
+        <input type="text" name="TituloRes" /> <br>
+        <label for="DescRes">Ingrese descripcion de la reseña</label>
+        <input type="text" name="DescRes" />
+        <button type="submit">Enviar reseña</button>
+
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index">Volver a lista de partidos</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

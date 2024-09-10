@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Biblioteca.Reseña>
+
+@{
+    ViewData["Title"] = "VistaReseñasHechas";
+}
+
+<h1>Reseñas generadas</h1>
+@if(!ViewBag.TieneRes){
+    <div>
+        <p>Usted no tiene reseñas sobre ningun partido. Puede ver los partidos disponibles para hacer una reseña en el inicio<p/>
+        <a class="nav-link text-dark" asp-area="" asp-controller="Periodista" asp-action="Index">Ir al inicio</a>
+    </div>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Titulo
+                </th>
+                <th>
+                    Contenido
+                </th>
+                <th>
+                    Seleccion local
+                </th>
+                <th>
+                    Seleccion visitante
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TituloRes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DescRes)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PartidoRes.SeleccionLocal.Pais.Nombre)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PartidoRes.SeleccionVisitante.Pais.Nombre)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) 
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+

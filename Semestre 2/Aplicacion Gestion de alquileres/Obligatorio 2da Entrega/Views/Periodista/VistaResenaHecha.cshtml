@@ -1,0 +1,44 @@
+﻿@model Biblioteca.Reseña
+
+@{
+    ViewData["Title"] = "VistaResenaHecha";
+}
+@if (ViewBag.Mensaje != null)
+{   
+    <div class="alert alert-success" role="alert">@ViewBag.Mensaje</div>
+}
+<h1>Ultima reseña generada</h1>
+<h2>@ViewBag.salida</h2>
+
+<div>
+    <h4>Reseña</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            Titulo
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TituloRes)
+        </dd>
+        <dt class = "col-sm-2">
+           Descripcion
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.DescRes)
+        </dd>
+            <dt class="col-sm-2">
+                Seleccion Local
+            </dt>
+            <dd class="col-sm-10">
+                @ViewBag.loc
+            </dd>
+            <dt class = "col-sm-2">
+            Seleccion Visitante
+            </dt>
+            <dd class = "col-sm-10">
+            @ViewBag.vis
+            </dd>
+
+
+        </dl>
+</div>

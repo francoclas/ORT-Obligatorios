@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obligatorio P1</title>
+    <script src="js/control.js"></script>
+    <style>
+        table,td,th {border: 1px solid;}
+        thead {font-weight: bold;}
+    </style>
+</head>
+<body>
+    <main>
+       <div id="menuNavegacion">
+           <fieldset>
+                <div class="menu" id="menuInicioSesion">
+                    <form id="formInicioSesion">
+                        <label for="usuarioInicioSesion">Ingrese usuario</label>
+                        <input type="text" id="usuarioInicioSesion" placeholder="Usuario"> 
+                        <input type="checkbox" id="esLocalInicioSesion"><label for="esLocalInicioSesion">Es un establecimiento?</label><br>
+                        <label for="contrasenaInicioSesion">Ingrese Contraseña</label>
+                        <input type="password" id="contrasenaInicioSesion" placeholder="Contraseña"> <br>
+                        <input type="button" value="Iniciar sesion" id="enviarInicioSesion"> <br>
+                        <label>No tienes usuario?</label>
+                        <input type="button" value="Registrarse" id="registroUsuario">
+                    </form>
+                </div>
+                <label for="usuarioSesionIniciada" id="usuarioSesionIniciada"></label>
+                    <div class="menu" id="menuNavegacionLocal">
+                        <nav>
+                            <ul>
+                                <li><input type="button" value="Habilitar reservas" id="btnHabilitarReservasVer"> </li>
+                                <li><input type="button" value="Modificar cupo" id="btnModificarCupoMaxVer"></li>
+                                <li><input type="button" value="Ver estadisticas" id="btnVisualizarEstadisticasVer"></li>
+                                <li><input type="button" value="Finalizar reservas" id="btnFinalizarReservasVer"></li>
+                                <li><input type="button" value="Cerrar sesion" id="btnCerrarSesionVer"></li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="menu" id="menuNavegacionCliente">
+                        <nav>
+                            <ul>
+                                <li><input type="button" value="Ver reservas pendientes" id="btnVerListaVer"> </li>
+                                <li><input type="button" value="Solicitar reservas" id="btnSolicitarReservaVer"></li>
+                                <li><input type="button" value="Cancelar Reservas" id="btnCancelarReservaVer"></li>
+                                <li><input type="button" value="Calificar reservas" id="btnCalificarReservaVer"></li>
+                                <li><input type="button" value="Ver estadisticas" id="btnVisualizarEstadisticasClienteVer"></li>
+                                <li><input type="button" value="Cerrar sesion" id="btnCerrarSesionVer2"></li>
+                            </ul>
+                        </nav>
+                    </div>
+            </fieldset>
+       </div>
+       <div id="menuFunciones">
+           <div class = "aplicacion" id="divHabilitarReserva">
+               <fieldset>
+                    <label for="estadoActualdeReserva">Estado de reserva para clientes:</label>
+                    <label id="estadoActualdeReserva">estadoActualEjemplo</label> <br>
+                    <label for="modificarEstadoDeReserva">Seleccione para modificar el estado de la reserva:</label>
+                    <select id="modificarEstadoDeReserva">
+                        <option value="-">-</option>
+                        <option value="True">Habilitar reservas</option>
+                        <option value="False">Deshabilitar reservas</option>
+                    </select> <br>
+                    <input type="button" value="Guardar estado" id="btnCargarEstadodeReserva">
+                </fieldset>
+           </div>
+           <div class="aplicacion" id="divModificarCupo">
+            <fieldset>
+                <label for="estadoActualdeCupoMax">Cupo maximo actual del establecimiento:</label>
+                <label id="estadoActualdeCupoMax">cupoActualEjemplo</label> <br>
+                <label for="modificarCupoMax">Ingrese nuevo cupo para modificar el cupo maximo:</label>
+                <input type="number" id="modificarCupoMax" placeholder="Ingrese nuevo cupo maximo"> <br>
+                <input type="button" value="Actualizar cupo" id="btnCargarNuevoCupoMax">
+            </fieldset>
+           </div>
+           <div class = "aplicacion" id="divVerEstadisticaLocal">
+               <fieldset>
+                   <label for="estadisticaLocal">Estadistica</label>
+                   <table >
+                    <thead>
+                        <tr>
+                            <td>Cupo maximo</td>
+                            <td>Cupo actual</td>
+                            <td>Cupo disponible</td>
+                            <td>Promedio</td>
+                            <td>Total reservas</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaEstadisticasLocal"></tbody>  
+                   </table> <br>
+                   <label>Reseñas recibidas</label>
+                   <table>
+                        <thead>
+                            <tr>
+                                <td>Nombre</td>
+                                <td>Puntuacion</td>
+                                <td>Comentario</td>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaResenasEstadisticas"></tbody>
+                   </table>
+                   <label for="estadisticaCalificacionLocal">Calificaciones</label>
+                   <table>
+                        <thead>
+                            <tr>
+                                <td>Nombre Local</td>
+                                <td>Puntuacion</td>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaCalificacionesLocal"></tbody>
+                   </table>
+               </fieldset>
+           </div>
+           <div class = "aplicacion" id="divFinalizarReserva">
+               <fieldset>
+                    <label>Reservas pendientes</label>
+                    <table>
+                        <thead>
+                            <td>ID Reserva</td>
+                            <td>Nombre cliente</td>
+                            <td>Cupo solicitado</td>
+                            <td>Seleccion</td>
+                        </thead>
+                        <tbody id="tablaReservasPendientesLocal"></tbody>
+                    </table>
+                    <hr>
+                    <label for="clienteABuscar">Buscar por cliente</label><br>
+                    <input type="text" id="clienteABuscar" placeholder="Ingrese el nombre del cliente">
+                    <input type="button" value="Buscar" id="btnBuscarReservasCliente">
+                    <table>
+                        <thead>
+                            <td>ID Reserva</td>
+                            <td>Nombre cliente</td>
+                            <td>Cupo solicitado</td>
+                            <td>Seleccion</td>
+                        </thead>
+                        <tbody id="tablaResultadoBusqueda"></tbody>
+                    </table>
+
+                    <hr>
+                    <label>Reserva seleccionada</label>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>ID Reserva</td>
+                                <td>Nombre cliente</td>
+                                <td>Cupo solicitado</td>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaReservasPendientesLocalSelecc">
+
+                        </tbody>
+                    </table>
+                    <input type="button" value="Finalizar reserva seleccionada" id="btnFinalizarReserva">
+                </fieldset>
+           </div>
+
+           <div class = "aplicacion" id="divVerReservasPendiente">
+               <fieldset>
+                   <label>Reservas pendientes</label>
+                   <table>
+                       <thead>
+                           <tr>
+                                <td>ID Reserva</td>
+                                <td>Foto</td>
+                                <td>Establecimiento</td>
+                                <td>Cupo solicitado</td>
+                           </tr>
+                       </thead>
+                       <tbody id="tablasReservasPendientesCliente"></tbody>
+                   </table>
+               </fieldset>
+           </div>
+           <div class = "aplicacion" id="divSolicitarReserva">
+                <fieldset>
+                    <label>Solicitar Reserva</label>
+                    <table>
+                        <thead>
+                            <tr>
+                                <td>Foto</td>
+                                <td>Nombre local</td>
+                                <td>Cupo actual</td>
+                                <td>Calificacion</td>
+                                <td>Tipo local</td>
+                                <td>Seleccionar</td>
+                            </tr>
+                        </thead>
+                        <tbody id="tablasLocalesParaReservar"></tbody>
+                    </table> <br>
+                    <hr>
+                    <label>Establecimiento seleccionado: </label> 
+                    <label id="reservaSeleccionadaCliente"></label> <br>
+                    <label for="cupoNuevaReserva">Cupo de reserva</label>
+                    <input type="number" id="cupoNuevaReserva" placeholder="Cantidad de cupo">
+                    <input type="button" id="btncupoNuevaReserva" value="Solicitar reserva">
+                </fieldset>
+           </div>
+           <div class = "aplicacion" id="divCancelarReserva">
+               <fieldset>
+                   <label>Reservas pendientes</label>
+                   <table>
+                    <thead>
+                        <tr>
+                            <td>ID Reserva</td>
+                            <td>Foto</td>
+                            <td>Nombre local</td>
+                            <td>Cupo reserva</td>
+                            <td>Seleccionar</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaReservasPendientesClienteCancelar"></tbody>
+                   </table>
+                   <label for="">Reserva seleccionada a cancelar</label>
+                   <table >
+                        <thead>
+                            <tr>
+                                <td>ID Reserva</td>
+                                <td>Foto</td>
+                                <td>Nombre local</td>
+                                <td>Cupo reserva</td>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaReservaSeleccionadaCancelar"></tbody>
+                   </table>
+                   <input type="button" value="Cancelar reserva" id="enviarCancelarReserva">
+               </fieldset>
+           </div>
+           <div class = "aplicacion" id="divCalificarReserva">
+               <fieldset>
+                   <label>Reservas sin clasificar finalizadas</label>
+                   <table >
+                    <thead>
+                        <tr>
+                            <td>Foto</td>
+                            <td>Nombre</td>
+                            <td>Cupo</td>
+                            <td>Seleccionar</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaReservasSinClasificar"></tbody>
+                   </table>
+                   <hr>
+                   <label>Reserva seleccionada</label>
+                   <label id="reservaAPuntaje"></label><br>
+                   <label>Elija Puntuacion</label>
+                   <select id="puntajeCalificacionReserva">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                   </select>
+                   <textarea id="comentarioCalificacionReserva" cols="30" rows="5" placeholder="Ingrese reseña"></textarea>
+                   <input type="button" value="Enviar Calificacion" id="enviarPuntajeReserva">
+               </fieldset>
+           </div>
+           <div class = "aplicacion" id="divVerEstadisticaCliente">
+               <fieldset>
+                   <label>Reservas finalizadas</label>
+                   <table >
+                        <thead>
+                            <tr>
+                                <td>Foto</td>
+                                <td>Nombre</td>
+                                <td>Reservas finalizadas</td>
+                                <td>Porcentaje reservado</td>
+                            </tr>
+                        </thead>
+                        <tbody id="tablaReservasFinalizadas"></tbody>
+                   </table>
+                   <label>Local con mas reservas</label>
+                   <table >
+                    <thead>
+                        <tr>
+                            <td>Foto</td>
+                            <td>Nombre</td>
+                            <td>Reservas totales</td>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaLocalMasReservado"></tbody>
+               </table>
+                   </table>
+               </fieldset>
+           </div>
+           <div class = "aplicacion" id="divRegistro">
+               <fieldset> <form  id="formularioRegistro">
+                    <label for="nombreRegistroUsuario">Nombre:</label>
+                    <input type="text" id="nombreRegistroUsuario" placeholder="Nombre"> <br>
+                    <label for="usuarioRegistroUsuario">Usuario:</label>
+                    <input type="text" id="usuarioRegistroUsuario" placeholder="Usuario"> <br>
+                    <label for="contrasenaRegistroUsuario">Contraseña:</label>
+                    <input type="password" id="contrasenaRegistroUsuario" placeholder="Contraseña"> <br>
+                    <input type="button" value="Registrarse" id="enviarRegistroUsuario">
+                </form> </fieldset> 
+           </div>
+       </div>
+    </main>
+    <script src="js/funciones.js"></script>
+    <script src="js/clases.js"></script>
+</body>
+</html> 

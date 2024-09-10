@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Obligatorio-1Er Entrega/1.0.0": {
+        "dependencies": {
+          "Biblioteca": "1.0.0"
+        },
+        "runtime": {
+          "Obligatorio-1Er Entrega.dll": {}
+        }
+      },
+      "Biblioteca/1.0.0": {
+        "runtime": {
+          "Biblioteca.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Obligatorio-1Er Entrega/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Biblioteca/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

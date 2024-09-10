@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Biblioteca.Partido>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@if (ViewBag.Mensaje != null)
+{
+    if (ViewBag.TipoMensaje == "Exito")
+    {
+        <div class="alert alert-success" role="alert">@ViewBag.Mensaje</div>
+    }
+    else if (ViewBag.TipoMensaje == "Error")
+    {
+        <div class="alert alert-danger" role="alert">@ViewBag.Mensaje</div>
+    }
+    else
+    {
+        <div class="alert alert-info" role="alert">@ViewBag.Mensaje</div>
+    }
+}
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FechaPartido)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeleccionLocal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SeleccionVisitante)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaPartido)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.SeleccionLocal.Pais.Nombre)
+            </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SeleccionVisitante.Pais.Nombre)
+                </td>
+            <td>
+                @Html.ActionLink("Hacer reseña", "VistaHacerResena", new { idpartido = item.IdPartido})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

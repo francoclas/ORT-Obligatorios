@@ -1,0 +1,4 @@
+Consultar todas las interacciones de un Kiter, por ejemplo ID 1
+ db.KiterComentarios.find({ "KiterID": 1 })
+Consultar cantidad de interacciones de Kiter, ejemplo 6
+ db.KiterComentarios.countDocuments({ "KiterID": 6 })

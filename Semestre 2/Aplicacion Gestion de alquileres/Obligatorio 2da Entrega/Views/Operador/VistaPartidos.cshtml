@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Biblioteca.Partido>
+
+@{
+    ViewData["Title"] = "VistaPartidos";
+}
+
+<h1>Partidos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Fecha del partido
+            </th>
+            <th>
+                Seleccion local
+            </th>
+            <th>
+                Seleccion visitante
+            </th>
+            <th>Estado</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaPartido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeleccionLocal.Pais.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SeleccionVisitante.Pais.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EstadoPartido)
+            </td>
+                    <td>
+                            @Html.ActionLink("Details", "VistaDetallesPartidoCerrado", new { idpartido = item.IdPartido})
+                    </td>
+        </tr>
+}
+    </tbody>
+</table>
