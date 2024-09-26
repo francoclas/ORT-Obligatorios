@@ -1,13 +1,16 @@
 package sistema;
 
+import dominio.clases.Equipo;
 import dominio.clases.Jugador;
+import dominio.clases.Sucursal;
 import dominio.tads.abb.ABB;
 import interfaz.*;
 
 public class ImplementacionSistema implements Sistema {
-    private ABB JugadoresSist;
-    private ABB EquiposSist;
-    private ABB SucursalesSist;
+    public static int maxSucursales;
+    private ABB<Jugador>JugadoresSist;
+    private ABB<Equipo> EquiposSist;
+    private ABB<Sucursal> SucursalesSist;
     //Funciones Interfaz obligatorio
     @Override
     public Retorno inicializarSistema(int maxSucursales) {
@@ -78,14 +81,57 @@ public class ImplementacionSistema implements Sistema {
         return Retorno.noImplementada();
     }
 
+    //Ejercicio 6
     @Override
     public Retorno registrarEquipo(String nombre, String manager) {
-        return Retorno.noImplementada();
-    }
+        //Verifico que los datos ingresados no esten vacios
+        if (nombre.isEmpty() || nombre == null ||manager.isEmpty() || manager == null){
+            return Retorno.error1("Debe completar todos los campos");
+        }
+        //Instancio un nuevo equipo
+        Equipo nuevo = new Equipo(nombre,manager);
+        //Verifico que no exista ese equipo en el sistema
+        if (EquiposSist.existe(nuevo)){
+            return Retorno.error2("Ya existe un equipo con ese nombre");
+        }
+        //Agrego el equipo a mi sistema
+        EquiposSist.insertar(nuevo);
+        return Retorno.ok();
 
+    }
+    //Ejercicio 7
     @Override
     public Retorno agregarJugadorAEquipo(String nombreEquipo, String aliasJugador) {
-        return Retorno.noImplementada();
+        //Validacion de datos
+            if (nombreEquipo.isEmpty() ||nombreEquipo == null || aliasJugador.isEmpty() || aliasJugador == null){
+                return Retorno.error1("Debe completar todos los campos");
+            }
+        //Obtengo jugador y equipo desde sistema
+            Equipo equipoAux = EquiposSist.buscarDato(new Equipo(nombreEquipo));
+
+            if (equipoAux == null){
+                return Retorno.error2("No existe equipo con ese nombre");
+            }
+            Jugador jugAux = JugadoresSist.buscarDato(new Jugador(aliasJugador));
+            if(jugAux == null){
+                return Retorno.error3("No existe jugador con ese alias");
+            }
+            //Verifico si jugador es profesional
+            if (!jugAux.esPro()){
+                return Retorno.error5("El jugador no tiene la categoria profesional");
+            }
+            //Verifico que el jugador no tiene equipo
+            if(jugAux.tieneEquipo()){
+                return Retorno.error6("El jugador ya tiene equipo");
+            }
+            //
+        try {
+            equipoAux.AgregarJugador(jugAux);
+        } catch (Exception e) {
+            return Retorno.error4(e.getMessage());
+        }
+        return Retorno.ok();
+
     }
 
     @Override

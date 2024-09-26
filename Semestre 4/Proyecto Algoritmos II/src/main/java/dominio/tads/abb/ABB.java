@@ -2,7 +2,7 @@ package dominio.tads.abb;
 import  dominio.tads.lista.Lista;
 
 
-public class ABB<T extends Comparable<T>>{
+public class ABB<T extends Comparable<T>> implements IABB<T>{
 
     private NodoABBGen<T> raiz;
 
@@ -13,6 +13,8 @@ public class ABB<T extends Comparable<T>>{
         this.raiz = new NodoABBGen<>(dato);
     }
 
+
+    @Override
     public void insertar(T dato) {
         if (this.raiz == null) {
             this.raiz = new NodoABBGen<>(dato);
@@ -37,26 +39,61 @@ public class ABB<T extends Comparable<T>>{
         }
     }
 
-    public void listarAscendentemente() {
-        if (this.raiz != null) {
-            listarAscendentemente(this.raiz);
-        } else {
-            System.out.println("ERROR: El ABB está vacío");
+    @Override
+    public T buscarDato(T dato) {
+        if (this.raiz !=null){
+            return buscardato(this.raiz,dato);
+        }else{
+            return null;
         }
     }
 
-    private void listarAscendentemente(NodoABBGen<T> nodo) {
+
+    private T buscardato(NodoABBGen<T> nodo, T dato){
         if (nodo != null) {
-            listarAscendentemente(nodo.getIzq());
-            System.out.print(nodo.getDato() + " - ");
-            listarAscendentemente(nodo.getDer());
+            if (dato.compareTo(nodo.getDato())==0) {
+                return nodo.getDato();
+            } else if(dato.compareTo(nodo.getDato()) < 0) {
+                //Si es menor voy por el lado izq y sigobuscando
+                return buscardato(nodo.getIzq(),dato);
+            }else{
+                return buscardato(nodo.getDer(),dato);
+            }
+        }
+        //Caso base
+        return null;
+    }
+    public String listarAscendentemente() {
+        if (this.raiz != null) {
+            return listarAscendentemente(this.raiz);
+        } else {
+            return "No se encontraron datos para mostrar";
         }
     }
 
-    public void listarDescendentemente() throws Exception {
-        throw new Exception("IMPLEMENTAR");
+    private String listarAscendentemente(NodoABBGen<T> nodo) {
+        if (nodo != null) {
+            return listarAscendentemente(nodo.getIzq()) + nodo.getDato() + " - " + listarAscendentemente(nodo.getDer());
+        }
+        return "";
     }
 
+    public String listarDescendentemente(){
+        if (this.raiz != null) {
+           return listarDesc(this.raiz);
+        } else {
+            return "No se encontraron datos para mostrar";
+
+        }
+    }
+    private String listarDesc(NodoABBGen<T> nodo){
+        if (nodo != null) {
+            return listarDesc(nodo.getDer()) + nodo.getDato() + listarDesc(nodo.getIzq());
+        }
+        return "";
+    }
+
+    @Override
     public boolean existe(T dato) {
         return existe(this.raiz, dato);
     }

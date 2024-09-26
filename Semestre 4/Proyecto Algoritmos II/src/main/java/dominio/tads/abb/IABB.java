@@ -1,14 +1,14 @@
 package dominio.tads.abb;
 
-public interface IABB {
-    public void insertar(int dato);
+public interface IABB <T extends Comparable<T>> {
+    public void insertar(T dato);
 
-    public void listarAscendentemente();
+    public T buscarDato(T dato);
 
-    public void listarDescendentemente();
+    public String listarAscendentemente();
 
-    public boolean existe(int dato);
+    public String listarDescendentemente();
 
-    public int borrarMinimo();
+    public boolean existe(T dato);
 
 }
