@@ -36,6 +36,10 @@ public class Equipo implements Comparable<Equipo>{
     public int getCantJugadores(){
         return cantJugadoresActual;
     }
+    @Override
+    public String toString(){
+        return this.Nombre + ";" + this.Manager + ";" + cantJugadoresActual + "|";
+    }
     //Funciones obligatorio
         public void AgregarJugador(Jugador Nuevo) throws Exception {
             //Verifico que el equipo no este completo

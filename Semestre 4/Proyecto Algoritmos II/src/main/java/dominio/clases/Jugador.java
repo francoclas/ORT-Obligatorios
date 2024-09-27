@@ -1,6 +1,5 @@
 package dominio.clases;
 import interfaz.Categoria;
-import java.util.Objects;
 
 public class Jugador implements Comparable<Jugador> {
     private String Alias;
@@ -73,9 +72,11 @@ public class Jugador implements Comparable<Jugador> {
         @Override
         public String toString(){
             //Esta formateado para la salida de los listados en puntos
-            return this.Alias + ";" + this.Nombre + ";" + this.Apellido + ";" + categoria.getTexto();
+            return this.Alias + ";" + this.Nombre + ";" + this.Apellido + ";" + categoria.getTexto() + "|";
         }
 
+
+    //Funciones aux
     public boolean esPro() {
         if (categoria.getTexto().equals("Profesional")){
             return true;
@@ -88,5 +89,9 @@ public class Jugador implements Comparable<Jugador> {
                 return false;
             }
             return true;
+    }
+
+    public boolean perteneceCat(Categoria cat){
+            return this.categoria.getTexto().equals(cat.getTexto());
     }
 }

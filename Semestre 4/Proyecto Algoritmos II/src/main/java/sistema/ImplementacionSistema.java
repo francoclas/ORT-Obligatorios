@@ -27,6 +27,7 @@ public class ImplementacionSistema implements Sistema {
     }
 
     @Override
+    //Ejercicio 2 - Instancio un nuevo jugador y lo mando al sistema
     public Retorno registrarJugador(String alias, String nombre, String apellido, Categoria categoria) {
         /*
         Posibles excepciones
@@ -49,6 +50,7 @@ public class ImplementacionSistema implements Sistema {
     }
 
     @Override
+    //Ejercicio 3 - Busco jugador desde el sistema
     public Retorno buscarJugador(String alias) {
         /*
            Posibles excepciones
@@ -65,23 +67,23 @@ public class ImplementacionSistema implements Sistema {
     }
 
     @Override
+    //Ejercicio 4 - Devuelvo lista de jugadores desde el sistema
     public Retorno listarJugadoresAscendente() {
         /*
            No hay error para devolver, siempre debe devolver la lista.
            Debe ser ordenados por alias alfabeticamente de manera creciente
            Formato: "alias#1;Nombre#1;apellido#1;categoria#1 | alias#2;Nombre#2;apellido#2;categoria#2
-
          */
-
-        return Retorno.noImplementada();
+        return new Retorno(Retorno.Resultado.OK,0,JugadoresSist.listarAscendentemente());
     }
 
     @Override
+    //Ejercicio 5 -
     public Retorno listarJugadoresPorCategoria(Categoria unaCategoria) {
         return Retorno.noImplementada();
     }
 
-    //Ejercicio 6
+    //Ejercicio 6 - Genero instancia y mando a sistema
     @Override
     public Retorno registrarEquipo(String nombre, String manager) {
         //Verifico que los datos ingresados no esten vacios
@@ -99,7 +101,7 @@ public class ImplementacionSistema implements Sistema {
         return Retorno.ok();
 
     }
-    //Ejercicio 7
+    //Ejercicio 7 - Obtengo jugador y equipo desde sistema, y agrego
     @Override
     public Retorno agregarJugadorAEquipo(String nombreEquipo, String aliasJugador) {
         //Validacion de datos
@@ -135,13 +137,24 @@ public class ImplementacionSistema implements Sistema {
     }
 
     @Override
+    //Ejercicio 8 - Se busca equipo desde sistema y se devuelve con funcion
     public Retorno listarJugadoresDeEquipo(String nombreEquipo) {
-        return Retorno.noImplementada();
+        //Validacion de datos
+        if (nombreEquipo.isEmpty() ||nombreEquipo == null){
+            return Retorno.error1("El nombre del equipo no puede ser vacio");
+        }
+        //Obtengo equipo desde sistema
+        Equipo equipoAux = EquiposSist.buscarDato(new Equipo(nombreEquipo));
+        if (equipoAux == null){
+            return Retorno.error2("No existe equipo con ese nombre");
+        }
+        return new Retorno(Retorno.Resultado.OK,0,equipoAux.ListarJugadores());
     }
 
+    //Ejercico 9 - Solo devuelve lista de equipos desde sistema
     @Override
     public Retorno listarEquiposDescendente() {
-        return Retorno.noImplementada();
+        return new Retorno(Retorno.Resultado.OK,0,EquiposSist.listarDescendentemente());
     }
 
     @Override
@@ -169,4 +182,11 @@ public class ImplementacionSistema implements Sistema {
         return Retorno.noImplementada();
     }
 
+    //Funciones auxiliares
+
+    public String filtrarCategorias(){
+
+    }
+
+    private String Filtrar(){}
 }
