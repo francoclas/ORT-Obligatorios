@@ -7,23 +7,23 @@ import dominio.tads.abb.ABB;
 import interfaz.*;
 
 public class ImplementacionSistema implements Sistema {
-    public static int maxSucursales;
+    public static int maxSucursalesSet;
+    public static int sucursalesActual = 0;
     private ABB<Jugador>JugadoresSist;
     private ABB<Equipo> EquiposSist;
     private ABB<Sucursal> SucursalesSist;
     //Funciones Interfaz obligatorio
     @Override
     public Retorno inicializarSistema(int maxSucursales) {
-        /*
-        * 1- Inicializo los arboles de Jugadores, Sucursales y equipos
-        *
-        *
-        *
-        *
-        * */
+        if (maxSucursales <= 3){
+            return Retorno.error1("El maximo de sucursales no puede ser menor o igual a 3");
+        }
+        maxSucursalesSet = maxSucursales;
+        JugadoresSist = new ABB<Jugador>();
+        EquiposSist = new ABB<Equipo>();
+        SucursalesSist = new ABB<Sucursal>();
 
-
-        return Retorno.noImplementada();
+        return Retorno.ok();
     }
 
     @Override
@@ -159,7 +159,20 @@ public class ImplementacionSistema implements Sistema {
 
     @Override
     public Retorno registrarSucursal(String codigo, String nombre) {
-        return Retorno.noImplementada();
+        //Verifico cantidad de sucursales actual
+        if (sucursalesActual == maxSucursalesSet)
+            return Retorno.error1("Ya se encuentra el maximo de sucursales");
+        //Reviso valores
+        if (codigo.isEmpty() || codigo == null || nombre.isEmpty() || nombre == null)
+            return Retorno.error2("Verifique los datos ingresados");
+        //Instancio Sucursal
+        Sucursal SucursalAux = new Sucursal(codigo,nombre);
+        if (SucursalesSist.existe(SucursalAux))
+            return Retorno.error3("La sucursal ya existe en el sistema");
+
+        //Agrego la sucursal al sistema
+        SucursalesSist.insertar(SucursalAux);
+        return Retorno.ok();
     }
 
     @Override
@@ -185,8 +198,10 @@ public class ImplementacionSistema implements Sistema {
     //Funciones auxiliares
 
     public String filtrarCategorias(){
-
+        return null;
     }
 
-    private String Filtrar(){}
+    private String Filtrar(){
+        return null;
+    }
 }
