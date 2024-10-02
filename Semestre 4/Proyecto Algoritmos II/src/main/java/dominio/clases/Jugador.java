@@ -72,7 +72,7 @@ public class Jugador implements Comparable<Jugador> {
         @Override
         public String toString(){
             //Esta formateado para la salida de los listados en puntos
-            return this.Alias + ";" + this.Nombre + ";" + this.Apellido + ";" + categoria.getTexto() + "|";
+            return this.Alias + ";" + this.Nombre + ";" + this.Apellido + ";" + categoria.getTexto();
         }
 
 

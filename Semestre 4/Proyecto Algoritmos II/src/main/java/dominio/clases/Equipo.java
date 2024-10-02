@@ -5,13 +5,13 @@ import dominio.tads.abb.ABB;
 public class Equipo implements Comparable<Equipo>{
     private String Nombre;
     private String Manager;
-    private ABB Plantel;
+    private ABB<Jugador> Plantel;
     private int cantJugadoresActual;
     //Metodos baiscos
     public Equipo(String nombre, String manager) {
         Nombre = nombre;
         Manager = manager;
-
+        Plantel = new ABB<Jugador>();
     }
     //Se utiliza para comparar o en casos de existencia
     public Equipo(String nombreEquipo) {
@@ -38,7 +38,7 @@ public class Equipo implements Comparable<Equipo>{
     }
     @Override
     public String toString(){
-        return this.Nombre + ";" + this.Manager + ";" + cantJugadoresActual + "|";
+        return this.Nombre + ";" + this.Manager + ";" + cantJugadoresActual;
     }
     //Funciones obligatorio
         public void AgregarJugador(Jugador Nuevo) throws Exception {

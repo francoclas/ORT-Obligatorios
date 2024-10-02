@@ -73,7 +73,7 @@ public class ABB<T extends Comparable<T>> implements IABB<T>{
 
     private String listarAscendentemente(NodoABBGen<T> nodo) {
         if (nodo != null) {
-            return listarAscendentemente(nodo.getIzq()) + nodo.getDato() + " - " + listarAscendentemente(nodo.getDer());
+            return listarAscendentemente(nodo.getIzq()) + " | " + nodo.getDato() + " | " + listarAscendentemente(nodo.getDer());
         }
         return "";
     }
@@ -88,7 +88,7 @@ public class ABB<T extends Comparable<T>> implements IABB<T>{
     }
     private String listarDesc(NodoABBGen<T> nodo){
         if (nodo != null) {
-            return listarDesc(nodo.getDer()) + nodo.getDato() + listarDesc(nodo.getIzq());
+            return listarDesc(nodo.getDer()) + " | " + nodo.getDato() + " | " + listarDesc(nodo.getIzq());
         }
         return "";
     }
@@ -96,6 +96,15 @@ public class ABB<T extends Comparable<T>> implements IABB<T>{
     @Override
     public boolean existe(T dato) {
         return existe(this.raiz, dato);
+    }
+
+    @Override
+    public NodoABBGen<T> obtenerRaiz() {
+        if (this.raiz != null) {
+            return raiz;
+        } else {
+            return null;
+        }
     }
 
 
@@ -110,17 +119,6 @@ public class ABB<T extends Comparable<T>> implements IABB<T>{
             }
         }
         return false;
-    }
-
-    public T borrarMinimo() {
-        if (this.raiz == null) {
-            return null;
-        } else if (this.raiz.getIzq() == null) {
-            T min_value = this.raiz.getDato();
-            this.raiz = this.raiz.getDer();
-            return min_value;
-        }
-        return borrarMinimo(this.raiz);
     }
 
     private T borrarMinimo(NodoABBGen<T> nodo) {
@@ -150,47 +148,5 @@ public class ABB<T extends Comparable<T>> implements IABB<T>{
             }
         }
     }
-
-    public int cantMayoresA(T k) throws Exception {
-        if (this.raiz != null) {
-            return cantMayoresARec(this.raiz, k);
-        } else {
-            throw new Exception("Error el ABB esta vacío");
-        }
-    }
-
-    private int cantMayoresARec(NodoABBGen<T> nodo, T k) {
-        if (nodo != null) {
-            if (nodo.getDato().compareTo(k)<=0) {
-                return cantMayoresARec(nodo.getDer(), k);
-            } else {
-                return 1 + cantMayoresARec(nodo.getDer(), k) + cantMayoresARec(nodo.getIzq(), k);
-            }
-        }
-        return 0;
-    }
-
-    public Lista<T> listaMayoresA(T k) throws Exception {
-        Lista<T> mayores = new Lista<>();
-        if (this.raiz != null) {
-            listaMayoresARec(this.raiz, k, mayores);
-        } else {
-            throw new Exception("Error el ABB esta vacío");
-        }
-        return mayores;
-    }
-
-    private void listaMayoresARec(NodoABBGen<T> nodo, T k, Lista<T> mayores) {
-        if (nodo != null) {
-            if (nodo.getDato().compareTo(k) <= 0) {
-                listaMayoresARec(nodo.getDer(), k, mayores);
-            } else {
-                mayores.insertar(nodo.getDato());
-                listaMayoresARec(nodo.getDer(), k, mayores);
-                listaMayoresARec(nodo.getIzq(), k, mayores);
-            }
-        }
-    }
-
 
 }

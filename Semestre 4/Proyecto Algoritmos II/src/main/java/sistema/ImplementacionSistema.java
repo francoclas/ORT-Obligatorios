@@ -3,7 +3,9 @@ package sistema;
 import dominio.clases.Equipo;
 import dominio.clases.Jugador;
 import dominio.clases.Sucursal;
+import dominio.clases.resultadobusquedaJugador;
 import dominio.tads.abb.ABB;
+import dominio.tads.abb.NodoABBGen;
 import interfaz.*;
 
 public class ImplementacionSistema implements Sistema {
@@ -12,7 +14,10 @@ public class ImplementacionSistema implements Sistema {
     private ABB<Jugador>JugadoresSist;
     private ABB<Equipo> EquiposSist;
     private ABB<Sucursal> SucursalesSist;
+    private int [][] SucursalesCon;
     //Funciones Interfaz obligatorio
+
+    //Ejercicio 1 - Inicializar sistema
     @Override
     public Retorno inicializarSistema(int maxSucursales) {
         if (maxSucursales <= 3){
@@ -22,7 +27,7 @@ public class ImplementacionSistema implements Sistema {
         JugadoresSist = new ABB<Jugador>();
         EquiposSist = new ABB<Equipo>();
         SucursalesSist = new ABB<Sucursal>();
-
+        SucursalesCon = new int[maxSucursales][maxSucursales];
         return Retorno.ok();
     }
 
@@ -57,13 +62,15 @@ public class ImplementacionSistema implements Sistema {
            1-Verifico si el alias esta vacio
            2-Busco dentro del arbol, si no existo tiro excepcion
         */
-        if (alias == "" || alias == null) return new Retorno(Retorno.Resultado.ERROR_1,0,"El alias no puede ser vacio o null");
+
+        if (alias == null || alias == "") return new Retorno(Retorno.Resultado.ERROR_1,0,"El alias no puede ser vacio o null");
         //Declaro variable String para la posible salida
-        String Jugador = ""; // Pendiente: Debo igualarlo al resultado de la funcion de buscar jugador en el arbol
+        resultadobusquedaJugador Salida = buscarJugadorRec(alias);
         //Verifico si la busqueda encontro algo, por defecto si no encontro devolvera "";
-        if(Jugador.isEmpty()) return new Retorno(Retorno.Resultado.ERROR_2,0,"No se encontro jugador con el alias: " + alias);
+        if(Salida.valorString == null ||Salida.valorString.isEmpty()) return new Retorno(Retorno.Resultado.ERROR_2,Salida.valorEntero,"No se encontro jugador con el alias: " + alias);
         //En este caso encontro devuelvo el string recibido del ToString() del jugador, debo setear el valorInteger a la cantidad de elementos recorridos
-        return new Retorno(Retorno.Resultado.OK,0, Jugador);
+        return new Retorno(Retorno.Resultado.OK,Salida.valorEntero,Salida.valorString);
+
     }
 
     @Override
@@ -80,7 +87,9 @@ public class ImplementacionSistema implements Sistema {
     @Override
     //Ejercicio 5 -
     public Retorno listarJugadoresPorCategoria(Categoria unaCategoria) {
-        return Retorno.noImplementada();
+        return new Retorno(Retorno.Resultado.OK,0,BuscarJugadoresPorCategoria(unaCategoria));
+
+
     }
 
     //Ejercicio 6 - Genero instancia y mando a sistema
@@ -151,12 +160,13 @@ public class ImplementacionSistema implements Sistema {
         return new Retorno(Retorno.Resultado.OK,0,equipoAux.ListarJugadores());
     }
 
-    //Ejercico 9 - Solo devuelve lista de equipos desde sistema
+    //Ejercicio 9 - Solo devuelve lista de equipos desde sistema
     @Override
     public Retorno listarEquiposDescendente() {
         return new Retorno(Retorno.Resultado.OK,0,EquiposSist.listarDescendentemente());
     }
 
+    //Ejercicio 10 - Genera instancia y manda al sistema
     @Override
     public Retorno registrarSucursal(String codigo, String nombre) {
         //Verifico cantidad de sucursales actual
@@ -197,11 +207,44 @@ public class ImplementacionSistema implements Sistema {
 
     //Funciones auxiliares
 
-    public String filtrarCategorias(){
-        return null;
+    //Para ejercio 3
+    private resultadobusquedaJugador buscarJugadorRec(String Alias){
+        return resultadobuscarJugadorRec(JugadoresSist.obtenerRaiz(),Alias,new resultadobusquedaJugador());
+    }
+    private resultadobusquedaJugador resultadobuscarJugadorRec(NodoABBGen<Jugador> nodo, String alias,resultadobusquedaJugador Salida){
+        //Instancio una clase de resultadobusquedaJugador para poder retornar
+        if(nodo != null) {
+            Salida.valorEntero += 1;
+            //caso base
+            if (nodo.getDato().equals(new Jugador(alias))){
+                Salida.valorString = nodo.getDato().toString();
+                return Salida;
+            }else{
+                resultadobuscarJugadorRec(nodo.getIzq(),alias,Salida);
+                resultadobuscarJugadorRec(nodo.getDer(),alias,Salida);
+            }
+        }
+        return Salida;
+    }
+    //Como el ejercicio 05, pide hacer un filtro que no corresponde a un objeto generico tipo T, se realizan las siguientes funciones con el objetivo de resolverlo
+    private String BuscarJugadoresPorCategoria(Categoria catAux){
+        return filtrarJugadores(JugadoresSist.obtenerRaiz(),catAux);
+        //Revisar
     }
 
-    private String Filtrar(){
-        return null;
+    private String filtrarJugadores(NodoABBGen<Jugador> nodo, Categoria catAux){
+        if (nodo != null){
+            //Busco por las ramas
+            String SalIzq = filtrarJugadores(nodo.getIzq(),catAux);
+            String SalDer = filtrarJugadores(nodo.getDer(),catAux);
+            if (nodo.getDato().perteneceCat(catAux)){
+                return SalIzq + " | " + nodo.getDato() + " | " +SalDer;
+            }else{
+                return SalIzq + SalDer;
+
+            }
+        }
+        return "";
+
     }
 }
