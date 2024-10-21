@@ -6,6 +6,7 @@ import dominio.clases.Sucursal;
 import dominio.clases.resultadobusquedaJugador;
 import dominio.tads.abb.ABB;
 import dominio.tads.abb.NodoABBGen;
+import dominio.tads.grafo.Grafo;
 import interfaz.*;
 
 public class ImplementacionSistema implements Sistema {
@@ -14,7 +15,7 @@ public class ImplementacionSistema implements Sistema {
     private ABB<Jugador>JugadoresSist;
     private ABB<Equipo> EquiposSist;
     private ABB<Sucursal> SucursalesSist;
-    private int [][] SucursalesCon;
+    private Grafo SucursalesCon;
     //Funciones Interfaz obligatorio
 
     //Ejercicio 1 - Inicializar sistema
@@ -135,13 +136,12 @@ public class ImplementacionSistema implements Sistema {
             if(jugAux.tieneEquipo()){
                 return Retorno.error6("El jugador ya tiene equipo");
             }
-            //
-        try {
+            if(equipoAux.getCantJugadores() == 5){
+                return  Retorno.error4("El equipo esta completo");
+            }
+            //Agrego al jugador
             equipoAux.AgregarJugador(jugAux);
-        } catch (Exception e) {
-            return Retorno.error4(e.getMessage());
-        }
-        return Retorno.ok();
+            return Retorno.ok();
 
     }
 
@@ -179,8 +179,11 @@ public class ImplementacionSistema implements Sistema {
         Sucursal SucursalAux = new Sucursal(codigo,nombre);
         if (SucursalesSist.existe(SucursalAux))
             return Retorno.error3("La sucursal ya existe en el sistema");
-
-        //Agrego la sucursal al sistema
+        /*
+        Agrego la sucursal al sistema, y la cargo en la matriz de adyacencia de mi sistema.
+        Asigno el numero de conexion.
+        */
+        SucursalAux.setNumConexion(obtenerNumConexion());
         SucursalesSist.insertar(SucursalAux);
         return Retorno.ok();
     }
@@ -246,5 +249,10 @@ public class ImplementacionSistema implements Sistema {
         }
         return "";
 
+    }
+
+    //Tiene como funcion devolver el proximo valor de la matriz de adyacencia para una nueva sucursal
+    private int obtenerNumConexion(){
+        return SucursalesCon.
     }
 }

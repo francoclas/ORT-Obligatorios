@@ -41,11 +41,7 @@ public class Equipo implements Comparable<Equipo>{
         return this.Nombre + ";" + this.Manager + ";" + cantJugadoresActual;
     }
     //Funciones obligatorio
-        public void AgregarJugador(Jugador Nuevo) throws Exception {
-            //Verifico que el equipo no este completo
-            if (cantJugadoresActual == 5) {
-                throw new Exception("El equipo esta completo");
-            }
+        public void AgregarJugador(Jugador Nuevo){
             //Agrego el jugador al plantel
             Plantel.insertar(Nuevo);
         }
