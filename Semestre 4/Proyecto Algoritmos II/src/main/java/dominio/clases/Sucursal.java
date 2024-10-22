@@ -3,12 +3,18 @@ package dominio.clases;
 public class Sucursal implements Comparable<Sucursal> {
     private String Codigo;
     private String Nombre;
-    private int numVertice;
     public Sucursal(String codigo, String nombre) {
         this.Codigo = codigo;
         this.Nombre = nombre;
 
     }
+    //Solo para equals
+    public Sucursal(String codigo) {
+        this.Codigo = codigo;
+
+
+    }
+
 
 
     @Override
@@ -20,11 +26,20 @@ public class Sucursal implements Comparable<Sucursal> {
         return this.Codigo.compareTo(o.Codigo);
     }
 
-    public int getNumVertice(){
-        return numVertice;
+    public String getCodigo() {
+        return Codigo;
     }
-    public void setNumConexion(int vertice){
-        this.numVertice = vertice;
+
+    public void setCodigo(String codigo) {
+        Codigo = codigo;
+    }
+
+    public String getNombre() {
+        return Nombre;
+    }
+
+    public void setNombre(String nombre) {
+        Nombre = nombre;
     }
 }
 

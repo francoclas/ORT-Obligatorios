@@ -145,4 +145,11 @@ public class Grafo implements IGrafo{
     public boolean existeVertice(String v) {
         return this.obtenerPosVertice(v) >= 0;
     }
+
+
+
+    @Override
+    public Grafo crearGrafoVacio(int cantMaxDeVertices) {
+        return null;
+    }
 }

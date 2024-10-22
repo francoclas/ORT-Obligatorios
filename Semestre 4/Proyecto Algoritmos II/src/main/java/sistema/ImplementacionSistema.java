@@ -15,7 +15,7 @@ public class ImplementacionSistema implements Sistema {
     private ABB<Jugador>JugadoresSist;
     private ABB<Equipo> EquiposSist;
     private ABB<Sucursal> SucursalesSist;
-    private Grafo SucursalesCon;
+    private Grafo ConexionesSucursales;
     //Funciones Interfaz obligatorio
 
     //Ejercicio 1 - Inicializar sistema
@@ -28,7 +28,7 @@ public class ImplementacionSistema implements Sistema {
         JugadoresSist = new ABB<Jugador>();
         EquiposSist = new ABB<Equipo>();
         SucursalesSist = new ABB<Sucursal>();
-        SucursalesCon = new int[maxSucursales][maxSucursales];
+        ConexionesSucursales = new Grafo(maxSucursales);
         return Retorno.ok();
     }
 
@@ -181,21 +181,67 @@ public class ImplementacionSistema implements Sistema {
             return Retorno.error3("La sucursal ya existe en el sistema");
         /*
         Agrego la sucursal al sistema, y la cargo en la matriz de adyacencia de mi sistema.
-        Asigno el numero de conexion.
+        Agrego sucursal a mi grafo de conexiones
+
         */
-        SucursalAux.setNumConexion(obtenerNumConexion());
+        ConexionesSucursales.agregarVertice(SucursalAux.getCodigo());
         SucursalesSist.insertar(SucursalAux);
         return Retorno.ok();
     }
 
     @Override
     public Retorno registrarConexion(String codigoSucursal1, String codigoSucursal2, int latencia) {
-        return Retorno.noImplementada();
+        //Verifico la latencia ingresada
+            if (latencia < 0){
+                return Retorno.error1("La latencia no puede ser menor a 0");
+            }
+        //Reviso valor ingresado de las sucursales
+            if (codigoSucursal1 == null || codigoSucursal1.isEmpty() || codigoSucursal2 == null || codigoSucursal2.isEmpty()) {
+                return Retorno.error2("Ninguno de los valores ingresados puede ser vacio");
+            }
+        //Verifico que existan las sucursales
+            if (!existeSucursal(codigoSucursal1)){
+                return Retorno.error3("La primera sucursal ingresada no existe");
+
+            }
+            if(!existeSucursal(codigoSucursal2)){
+                return Retorno.error3("La segunda sucursal ingresada no existe");
+            }
+        //Verifico si hay conexion
+            if (ConexionesSucursales.sonAdyacentes(codigoSucursal1,codigoSucursal2)){
+                return Retorno.error4("Ya existe una conexion entre ambas sucursales");
+            }
+        //Registro conexion
+            ConexionesSucursales.agregarArista(codigoSucursal1,codigoSucursal2,latencia);
+            return Retorno.ok();
     }
 
     @Override
     public Retorno actualizarConexion(String codigoSucursal1, String codigoSucursal2, int latencia) {
-        return Retorno.noImplementada();
+        //Verifico la latencia ingresada
+        if (latencia < 0){
+            return Retorno.error1("La latencia no puede ser menor a 0");
+        }
+        //Reviso valor ingresado de las sucursales
+        if (codigoSucursal1 == null || codigoSucursal1.isEmpty() || codigoSucursal2 == null || codigoSucursal2.isEmpty()) {
+            return Retorno.error2("Ninguno de los valores ingresados puede ser vacio");
+        }
+        //Verifico que existan las sucursales
+        if (!existeSucursal(codigoSucursal1)){
+            return Retorno.error3("La primera sucursal ingresada no existe");
+
+        }
+        if(!existeSucursal(codigoSucursal2)){
+            return Retorno.error3("La segunda sucursal ingresada no existe");
+        }
+        //Verifico si hay conexion
+        if (ConexionesSucursales.sonAdyacentes(codigoSucursal1,codigoSucursal2)){
+            return Retorno.error4("Ya existe una conexion entre ambas sucursales");
+        }
+        //Actualizo el valor de la conexion
+
+        return Retorno.ok();
+
     }
 
     @Override
@@ -250,9 +296,12 @@ public class ImplementacionSistema implements Sistema {
         return "";
 
     }
-
-    //Tiene como funcion devolver el proximo valor de la matriz de adyacencia para una nueva sucursal
-    private int obtenerNumConexion(){
-        return SucursalesCon.
+    private boolean existeSucursal(String codSucursal){
+        /*
+            Tiene como funcion ver si existe la sucursal que se ingresa, se utiliza en registra conexion
+            y registrar sucursal.
+        */
+        Sucursal aux = new Sucursal(codSucursal);
+        return SucursalesSist.existe(aux);
     }
 }
