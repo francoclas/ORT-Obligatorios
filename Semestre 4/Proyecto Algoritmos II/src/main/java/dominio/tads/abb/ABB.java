@@ -110,7 +110,7 @@ public class ABB<T extends Comparable<T>> implements IABB<T>{
 
     private boolean existe(NodoABBGen<T> nodo, T dato) {
         if (nodo != null) {
-            if (nodo.getDato() == dato) {
+            if (nodo.getDato().compareTo(dato) == 0) {
                 return true;
             } else if (dato.compareTo(nodo.getDato())>0) {
                 return existe(nodo.getDer(), dato);

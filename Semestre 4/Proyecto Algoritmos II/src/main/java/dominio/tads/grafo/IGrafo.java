@@ -12,6 +12,5 @@ import dominio.tads.lista.Lista;
         Lista<String> verticesAdyacentes(String v);
         boolean sonAdyacentes(String v1, String v2);
         boolean existeVertice (String v);
-
         Grafo crearGrafoVacio(int cantMaxDeVertices);
     }

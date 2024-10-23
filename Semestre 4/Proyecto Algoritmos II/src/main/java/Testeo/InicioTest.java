@@ -32,6 +32,13 @@ public class InicioTest {
             Sis.registrarJugador("IronFist", "Pablo", "Rodríguez", Categoria.PROFESIONAL);
             Sis.registrarJugador("SilentArrow", "Camila", "Fernández", Categoria.ESTANDARD);
             Sis.registrarJugador("StormBringer", "Diego", "López", Categoria.PROFESIONAL);
+            //Se utilizan para el error 4 del ejercicio 7
+            Sis.registrarJugador("JugadorEj3", "Diego", "López", Categoria.PROFESIONAL);
+            Sis.registrarJugador("JugadorEj4", "Diego", "López", Categoria.PROFESIONAL);
+            Sis.registrarJugador("JugadorEj5", "Diego", "López", Categoria.PROFESIONAL);
+            Sis.registrarJugador("JugadorEj6", "Diego", "López", Categoria.PROFESIONAL);
+
+
         //Agrego algunos jugadores a equipos - Ejercicio 7
                 Sis.agregarJugadorAEquipo("DragonesGaming", "ShadowHunter");
                 Sis.agregarJugadorAEquipo("DragonesGaming", "BladeMaster");
@@ -45,8 +52,13 @@ public class InicioTest {
                 Sis.agregarJugadorAEquipo("CyberTitans", "DragonSlayer");
                 Sis.agregarJugadorAEquipo("CyberTitans", "IronFist");
 
+                //Se agregan 5 para poder verificar el error 4
                 Sis.agregarJugadorAEquipo("NovaSquad", "NovaStorm");
                 Sis.agregarJugadorAEquipo("NovaSquad", "NightWolf");
+                Sis.agregarJugadorAEquipo("NovaSquad", "JugadorEj3");
+                Sis.agregarJugadorAEquipo("NovaSquad", "JugadorEj4");
+                Sis.agregarJugadorAEquipo("NovaSquad", "JugadorEj5");
+
 
         //Hago listados de equipos - Ejercicio 9
             //Se llama al sistema, se guarda el retorno y se muestra el valor string
@@ -65,19 +77,65 @@ public class InicioTest {
             System.out.println("Listado de jugadores de DragonesGaming");
             System.out.println(ListaJugadoresEquipo.getValorString());
             System.out.println("----------------------------------------------------------------------");
-        //Listar por jugadores por categoria
+        //Listar por jugadores por categoria - Ejercicio 5
             Retorno ListaJugadoresCategoria = Sis.listarJugadoresPorCategoria(Categoria.ESTANDARD);
             System.out.println("Listado de jugadores profesionales");
             System.out.println(ListaJugadoresCategoria.getValorString());
             System.out.println("----------------------------------------------------------------------");
-        //Buscar un juugador
-            Retorno BuscarJugador = Sis.buscarJugador("sdsd");
+        //Buscar un jugador
+            Retorno BuscarJugador = Sis.buscarJugador("PhoenixFire");
         System.out.println("Resultado de jugador:");
         System.out.println(BuscarJugador.getValorString());
         System.out.println(String.valueOf(BuscarJugador.getResultado()));
         System.out.println(String.valueOf(BuscarJugador.getValorInteger()));
         System.out.println("----------------------------------------------------------------------");
+        /*
+            A partir de aca se testea unicamente la salida de errores:
+        * */
 
+        System.out.println("Listado de errores:");
+            System.out.println("Ejercicio 2:");
+            System.out.print("Forzando error 1:");
+            Retorno RetEj2Error1 = Sis.registrarJugador("","Hugo","Anthony",Categoria.ESTANDARD);
+            System.out.print(RetEj2Error1.getValorString());
+            System.out.print(" | Forzando error 2:");
+            Retorno RetEj2Error2 = Sis.registrarJugador("ShadowHunter","Hugo","Anthony",Categoria.ESTANDARD);
+            System.out.println(RetEj2Error2.getValorString());
+        System.out.println("_______________________________________________");
+            System.out.println("Ejercicio 3:");
+            System.out.print("Forzando error 1:");
+            Retorno RetEj3Error1 = Sis.buscarJugador("");
+            System.out.print(RetEj3Error1.getValorString());
+            System.out.print("Forzando error 2:");
+            Retorno RetEj3Error2 = Sis.buscarJugador("luffy");
+            System.out.println(RetEj3Error2.getValorString());
+        System.out.println("_______________________________________________");
+        System.out.println("Ejercicios 4 - 5 - 9 no cuentan con posibles salida de errores");
+        System.out.println("_______________________________________________");
+            System.out.println("Ejercicio 6:");
+            System.out.print("Forzando error 1:");
+            Retorno RetEj6Error1 = Sis.registrarEquipo("LosPibeGamer","");
+            System.out.print(RetEj6Error1.getValorString());
+            System.out.print(" | Forzando error 2:");
+            Retorno RetEj6Error2 = Sis.registrarEquipo("CyberTitans","Manager");
+            System.out.print(RetEj6Error2.getValorString());
+        System.out.println("_______________________________________________");
+            System.out.println("Ejercicio 7:");
+            System.out.print("Forzando error 1:");
+            Retorno RetEj7Error1 = Sis.agregarJugadorAEquipo("","HUgoGamer");
+            System.out.print(RetEj7Error1.getValorString());
+            System.out.print("Forzando error 2:");
+            Retorno RetEj7Error2 = Sis.agregarJugadorAEquipo("LosPibesGamer","Ejemplo");
+            System.out.print(RetEj7Error2.getValorString());
+            System.out.print("Forzando error 3:");
+            Retorno RetEj7Error3 = Sis.agregarJugadorAEquipo("CyberTitans","huguito");
+            System.out.print(RetEj7Error3.getValorString());
+            System.out.print("Forzando error 4:");
+            Retorno RetEj7Error4 = Sis.agregarJugadorAEquipo("NovaSquad", "JugadorEj6");
+            System.out.print(RetEj7Error4.getValorString());
+            System.out.print("Forzando error 5:");
+
+            System.out.print("Forzando error 6:");
 
     }
 }
