@@ -94,4 +94,8 @@ public class Jugador implements Comparable<Jugador> {
     public boolean perteneceCat(Categoria cat){
             return this.categoria.getTexto().equals(cat.getTexto());
     }
+
+    public void AgregarEquipo(Equipo nombre) {
+        this.equipo = nombre;
+        }
 }

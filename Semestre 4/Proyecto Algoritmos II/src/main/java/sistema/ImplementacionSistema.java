@@ -115,7 +115,7 @@ public class ImplementacionSistema implements Sistema {
     @Override
     public Retorno agregarJugadorAEquipo(String nombreEquipo, String aliasJugador) {
         //Validacion de datos
-            if (nombreEquipo.isEmpty() ||nombreEquipo == null || aliasJugador.isEmpty() || aliasJugador == null){
+           if (nombreEquipo.isEmpty() ||nombreEquipo == null || aliasJugador.isEmpty() || aliasJugador == null){
                 return Retorno.error1("Debe completar todos los campos");
             }
         //Obtengo jugador y equipo desde sistema
@@ -141,6 +141,7 @@ public class ImplementacionSistema implements Sistema {
             }
             //Agrego al jugador
             equipoAux.AgregarJugador(jugAux);
+            jugAux.AgregarEquipo(equipoAux);
             return Retorno.ok();
 
     }

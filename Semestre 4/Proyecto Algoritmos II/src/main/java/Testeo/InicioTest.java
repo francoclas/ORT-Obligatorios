@@ -37,13 +37,14 @@ public class InicioTest {
             Sis.registrarJugador("JugadorEj4", "Diego", "López", Categoria.PROFESIONAL);
             Sis.registrarJugador("JugadorEj5", "Diego", "López", Categoria.PROFESIONAL);
             Sis.registrarJugador("JugadorEj6", "Diego", "López", Categoria.PROFESIONAL);
+            Sis.registrarJugador("JugadorEj7", "Diego", "López", Categoria.PROFESIONAL);
+            Sis.registrarJugador("JugadorEj8", "Diego", "López", Categoria.PROFESIONAL);
 
 
         //Agrego algunos jugadores a equipos - Ejercicio 7
                 Sis.agregarJugadorAEquipo("DragonesGaming", "ShadowHunter");
                 Sis.agregarJugadorAEquipo("DragonesGaming", "BladeMaster");
 
-                Sis.agregarJugadorAEquipo("FénixEternal", "PhoenixFire");
                 Sis.agregarJugadorAEquipo("FénixEternal", "SilentArrow");
 
                 Sis.agregarJugadorAEquipo("ShadowWarriors", "CyberKnight");
@@ -58,8 +59,11 @@ public class InicioTest {
                 Sis.agregarJugadorAEquipo("NovaSquad", "JugadorEj3");
                 Sis.agregarJugadorAEquipo("NovaSquad", "JugadorEj4");
                 Sis.agregarJugadorAEquipo("NovaSquad", "JugadorEj5");
+                Sis.agregarJugadorAEquipo("NovaSquad", "JugadorEj6");
+                Sis.agregarJugadorAEquipo("NovaSquad", "JugadorEj8");
 
-
+                Retorno re = Sis.listarJugadoresDeEquipo("NovaSquad");
+        System.out.println(re.getValorString());
         //Hago listados de equipos - Ejercicio 9
             //Se llama al sistema, se guarda el retorno y se muestra el valor string
             Retorno ListaEquiposDes = Sis.listarEquiposDescendente();
@@ -118,24 +122,26 @@ public class InicioTest {
             System.out.print(RetEj6Error1.getValorString());
             System.out.print(" | Forzando error 2:");
             Retorno RetEj6Error2 = Sis.registrarEquipo("CyberTitans","Manager");
-            System.out.print(RetEj6Error2.getValorString());
+            System.out.println(RetEj6Error2.getValorString());
         System.out.println("_______________________________________________");
             System.out.println("Ejercicio 7:");
             System.out.print("Forzando error 1:");
             Retorno RetEj7Error1 = Sis.agregarJugadorAEquipo("","HUgoGamer");
             System.out.print(RetEj7Error1.getValorString());
-            System.out.print("Forzando error 2:");
+            System.out.print(" | Forzando error 2:");
             Retorno RetEj7Error2 = Sis.agregarJugadorAEquipo("LosPibesGamer","Ejemplo");
             System.out.print(RetEj7Error2.getValorString());
-            System.out.print("Forzando error 3:");
+            System.out.print(" | Forzando error 3:");
             Retorno RetEj7Error3 = Sis.agregarJugadorAEquipo("CyberTitans","huguito");
             System.out.print(RetEj7Error3.getValorString());
-            System.out.print("Forzando error 4:");
-            Retorno RetEj7Error4 = Sis.agregarJugadorAEquipo("NovaSquad", "JugadorEj6");
+            System.out.print(" | Forzando error 4:");
+            Retorno RetEj7Error4 = Sis.agregarJugadorAEquipo("NovaSquad", "JugadorEj7");
             System.out.print(RetEj7Error4.getValorString());
-            System.out.print("Forzando error 5:");
-
-            System.out.print("Forzando error 6:");
-
+            System.out.print(" | Forzando error 5:");
+            Retorno RetEJ7Error5 = Sis.agregarJugadorAEquipo("FénixEternal", "PhoenixFire");
+            System.out.print(RetEJ7Error5.getValorString());
+            System.out.print(" | Forzando error 6:");
+            Retorno RetEj7Error6 = Sis.agregarJugadorAEquipo("CyberTitans", "JugadorEj6");
+            System.out.println(RetEj7Error6.getValorString());
     }
 }

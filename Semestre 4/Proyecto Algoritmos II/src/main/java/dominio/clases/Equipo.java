@@ -44,6 +44,8 @@ public class Equipo implements Comparable<Equipo>{
         public void AgregarJugador(Jugador Nuevo){
             //Agrego el jugador al plantel
             Plantel.insertar(Nuevo);
+            //Sumo cant
+            cantJugadoresActual++;
         }
         public String ListarJugadores(){
             return Plantel.listarAscendentemente();
