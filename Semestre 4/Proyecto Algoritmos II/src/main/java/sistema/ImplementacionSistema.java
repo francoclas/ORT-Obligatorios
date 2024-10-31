@@ -236,11 +236,11 @@ public class ImplementacionSistema implements Sistema {
             return Retorno.error3("La segunda sucursal ingresada no existe");
         }
         //Verifico si hay conexion
-        if (ConexionesSucursales.sonAdyacentes(codigoSucursal1,codigoSucursal2)){
-            return Retorno.error4("Ya existe una conexion entre ambas sucursales");
+        if (!ConexionesSucursales.sonAdyacentes(codigoSucursal1,codigoSucursal2)){
+            return Retorno.error4("No existe una conexion entre ambas sucursales");
         }
         //Actualizo el valor de la conexion
-
+        ConexionesSucursales.actualizarArista(codigoSucursal1,codigoSucursal2,latencia);
         return Retorno.ok();
 
     }

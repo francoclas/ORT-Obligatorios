@@ -3,6 +3,8 @@ package dominio.tads.grafo;
 import dominio.tads.lista.Lista;
 
 public class Grafo implements IGrafo{
+
+
     private int cantMAxVertices;
     private int cantActualvertices;
 
@@ -104,7 +106,19 @@ public class Grafo implements IGrafo{
             }
         }
     }
+    @Override
+    public void actualizarArista(String origen, String destino, int nuevoPeso) {
+        int posOrigen = this.obtenerPosVertice(origen);
+        int posDestino = this.obtenerPosVertice(destino);
 
+        //Verifico que exista conexion
+        if (posOrigen >= 0 && posDestino >= 0 && this.matAdy[posOrigen][posDestino].isExiste()){
+            this.matAdy[posOrigen][posDestino].setPeso(nuevoPeso);
+            if (!this.esDirigido) {
+                this.matAdy[posDestino][posOrigen].setPeso(nuevoPeso);
+            }
+        }
+    }
     @Override
     public void borrarArista(String origen, String destino) {
         int posOrigen = this.obtenerPosVertice(origen);

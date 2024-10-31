@@ -15,8 +15,6 @@ public class Sucursal implements Comparable<Sucursal> {
 
     }
 
-
-
     @Override
     public String toString(){
         return Codigo + " - " + Nombre;
