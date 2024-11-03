@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "BuscarCabana";
+    var s = TempData["Error"];
+}
+@if (s != null)
+{
+    <p>@s.ToString()</p>
+}
+<h1>Busqueda de cabañas</h1>
+@ViewBag.Error
+<br />
+<form asp-action="BuscarCabana" method="post">
+    <label>Seleccione mediante que informacion quiere buscar una cabaña</label>
+    <select name="OpcionBuscar" id="Selector">
+        <option value="">Seleccione una opcion</option>
+        <option value="1">Nombre</option>
+        <option value="2">Tipo</option>
+        <option value="3">Habilitadas para alquilar</option>
+        <option value="4">Capacidad</option>
+    </select>
+    <br />
+        <label>Por que tipo de cabañas desea buscar?</label> <br/>
+        <label>(Si no busca por tipo no es necesario seleccionar)</label>
+        <select name="idtipo">
+            <option value="">Seleccione una opcion</option>
+            @foreach (var item in ViewBag.Lista)
+            {
+                <option value="@item.Id">@item.Nombre</option>
+            }
+        </select>
+        <br />
+    <div id="BusTexto">
+        <label>Ingrese la informacion a buscar</label>
+        <input name="ValorBusqueda" type="text"></input>
+    </div><br/>
+    <input type="submit" value="Buscar" class="btn btn-primary" id="btnForm">
+    </input>
+</form>

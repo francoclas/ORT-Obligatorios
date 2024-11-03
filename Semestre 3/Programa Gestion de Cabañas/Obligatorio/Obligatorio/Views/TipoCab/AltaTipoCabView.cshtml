@@ -1,0 +1,40 @@
+﻿@model Obligatorio.Properties.Models.ViewModelTC
+
+@{
+    ViewData["Title"] = "AltaTipoCabView";
+}
+
+<h1>Generacion de nuevo tipo de cabañas</h1>
+
+<h4>@ViewBag.Error</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="AltaTipoCabView" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger">Nombre nuevo tipo</div>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Descr" class="control-label">Descripcion del nuevo tipo</label>
+                <input asp-for="Descr" class="form-control" />
+                <span asp-validation-for="Descr" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CostoPer" class="control-label">Costo por persona</label>
+                <input asp-for="CostoPer" class="form-control" />
+                <span asp-validation-for="CostoPer" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

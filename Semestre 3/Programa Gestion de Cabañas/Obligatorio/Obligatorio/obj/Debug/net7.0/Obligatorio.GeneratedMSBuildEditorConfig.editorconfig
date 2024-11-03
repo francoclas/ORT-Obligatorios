@@ -9,9 +9,17 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Obligatorio
 build_property.RootNamespace = Obligatorio
-build_property.ProjectDir = C:\Users\frgomez\Desktop\ORT\Semestre 3\Programacion\Obligatorio\Obligatorio\Obligatorio\
+build_property.ProjectDir = C:\Users\Franco\Desktop\Obligatorio\Obligatorio\Obligatorio\
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\frgomez\Desktop\ORT\Semestre 3\Programacion\Obligatorio\Obligatorio\Obligatorio
+build_property.MSBuildProjectDirectory = C:\Users\Franco\Desktop\Obligatorio\Obligatorio\Obligatorio
 build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Franco/Desktop/Obligatorio/Obligatorio/Obligatorio/Views/Cabana/AltaCabanaView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FiYW5hXEFsdGFDYWJhbmFWaWV3LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Franco/Desktop/Obligatorio/Obligatorio/Obligatorio/Views/TipoCab/AltaTipoCabView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlwb0NhYlxBbHRhVGlwb0NhYlZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

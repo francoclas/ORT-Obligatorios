@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\franc\\Desktop\\orto\\Programacion 3\\Obligatorio\\Obligatorio\\LogicaNegocio\\LogicaNegocio.csproj": {}
+    "C:\\Users\\Franco\\Desktop\\Obligatorio\\Obligatorio\\LogicaNegocio\\LogicaNegocio.csproj": {}
   },
   "projects": {
-    "C:\\Users\\franc\\Desktop\\orto\\Programacion 3\\Obligatorio\\Obligatorio\\LogicaNegocio\\LogicaNegocio.csproj": {
+    "C:\\Users\\Franco\\Desktop\\Obligatorio\\Obligatorio\\LogicaNegocio\\LogicaNegocio.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\franc\\Desktop\\orto\\Programacion 3\\Obligatorio\\Obligatorio\\LogicaNegocio\\LogicaNegocio.csproj",
+        "projectUniqueName": "C:\\Users\\Franco\\Desktop\\Obligatorio\\Obligatorio\\LogicaNegocio\\LogicaNegocio.csproj",
         "projectName": "LogicaNegocio",
-        "projectPath": "C:\\Users\\franc\\Desktop\\orto\\Programacion 3\\Obligatorio\\Obligatorio\\LogicaNegocio\\LogicaNegocio.csproj",
-        "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\franc\\Desktop\\orto\\Programacion 3\\Obligatorio\\Obligatorio\\LogicaNegocio\\obj\\",
+        "projectPath": "C:\\Users\\Franco\\Desktop\\Obligatorio\\Obligatorio\\LogicaNegocio\\LogicaNegocio.csproj",
+        "packagesPath": "C:\\Users\\Franco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Franco\\Desktop\\Obligatorio\\Obligatorio\\LogicaNegocio\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\franc\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Franco\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +39,12 @@
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -55,7 +61,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
         }
       }
     }

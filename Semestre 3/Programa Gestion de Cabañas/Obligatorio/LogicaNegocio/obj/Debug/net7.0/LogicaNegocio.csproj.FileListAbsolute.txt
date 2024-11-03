@@ -1,0 +1,12 @@
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.AssemblyReference.cache
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfoInputs.cache
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.AssemblyInfo.cs
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.deps.json
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.dll
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaNegocio\bin\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.dll
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaNegocio\obj\Debug\net7.0\refint\LogicaNegocio.dll
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaNegocio\obj\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaNegocio\obj\Debug\net7.0\ref\LogicaNegocio.dll

@@ -1,0 +1,49 @@
+﻿@model Cliente.Models.TipoCab
+
+@{
+    ViewData["Title"] = "EliminarTipo";
+}
+
+<h1>EliminarTipo</h1>
+
+<p>
+    @ViewBag.Error
+</p>
+
+<h3>Desea eliminar este tipo de dato</h3>
+<div>
+    <h4>TipoCab</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Id)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Id)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Desc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Desc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CostoP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CostoP)
+        </dd>
+    </dl>
+    
+    <form asp-action="EliminarTipoID">
+        <input type="Hidden" value=" @Model.Id" name = "Id"/>
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>

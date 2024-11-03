@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WebAPI</name>
+    </assembly>
+    <members>
+        <member name="T:WebAPI.DTOS.CabanaDTO">
+            <summary>
+            DTO que representa una cabaña. Cuando se implemente no sera necesario rellenar por completo el objeto.
+            </summary>
+        </member>
+        <member name="T:WebAPI.DTOS.CabanaFiltradaDTO">
+            <summary>
+            DTO que filtra la informacion de las cabañas, se utiliza para un caso unico.
+            </summary>
+        </member>
+        <member name="T:WebAPI.DTOS.MantDTO">
+            <summary>
+            DTO para los mantenimientos..
+            </summary>
+        </member>
+        <member name="T:WebAPI.DTOS.TecnicoMontoDTO">
+            <summary>
+            DTO para uso especifico de consultas con Linq.
+            </summary>
+        </member>
+        <member name="T:WebAPI.DTOS.TipoCabDTO">
+            <summary>
+            DTO sobre un tipo de cabana pero filtrado.
+            </summary>
+        </member>
+    </members>
+</doc>

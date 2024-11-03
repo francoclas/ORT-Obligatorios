@@ -1,0 +1,19 @@
+﻿
+@{
+    ViewData["Title"] = "Baja";
+    var Lista = ViewBag.Lista;
+}
+<h1>Formulario de baja de Tipo de cabaña</h1>
+    @ViewBag.Error
+    
+<form asp-action="Baja" method="post">
+    <label>Seleccione el tipo que desea dar de baja </label>
+    <select name="IdTipo">
+        <option value="">Seleccione</option>
+        @foreach (var item in Lista)
+        {   
+            <option value="@item.Id" >@item.Nombre</option>
+        }
+    </select>
+    <input type="submit" value="Enviar" />
+</form>

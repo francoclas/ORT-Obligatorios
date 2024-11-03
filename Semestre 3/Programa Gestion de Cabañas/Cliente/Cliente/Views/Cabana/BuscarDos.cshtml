@@ -1,0 +1,17 @@
+﻿@{ViewData["Title"] = "BuscarDos";
+    var s = TempData["Error"];
+}
+@if (s != null)
+{
+    <p>@s.ToString()</p>
+}
+<h1>Buscar entre rango de capacidad de cabana</h1>
+
+@ViewBag.Error
+<form method="post" asp-action="BuscarDos">
+    <label>Ingrese el minimo de habitantes</label>
+    <input type="text" name="n1" /><br />
+    <label>Ingrese el maximo de habitantes</label>
+    <input type="text" name="n2"<br />
+    <input type="submit" value="Buscar" />
+</form>

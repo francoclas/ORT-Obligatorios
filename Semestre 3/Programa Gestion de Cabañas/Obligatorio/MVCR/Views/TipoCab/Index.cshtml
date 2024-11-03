@@ -1,0 +1,47 @@
+﻿@model IEnumerable<LogicaNegocio.Entidades.TipoCab>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Tipos registrados</h1>
+@ViewBag.Error
+<p>
+    <a asp-action="Alta">Registrar tipo nuevo</a>
+</p>
+<p>
+    <a asp-action="BuscarNombre">Buscar Tipos</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CostoP)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostoP)
+            </td>
+                <td> @Html.ActionLink("Editar", "Editar","TipoCab", new { Id=item.Id})</td>
+                <td> @Html.ActionLink("Delete", "Baja_Confirmada", new { IdTipo= item.Id})</td>
+        </tr>
+}
+    </tbody>
+</table>

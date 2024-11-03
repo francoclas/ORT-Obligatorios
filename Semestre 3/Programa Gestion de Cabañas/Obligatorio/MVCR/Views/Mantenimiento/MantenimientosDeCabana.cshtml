@@ -1,0 +1,106 @@
+﻿@model IEnumerable<LogicaNegocio.Entidades.Mantenimiento>
+
+@{
+    ViewData["Title"] = "MantenimientosDeCabana";
+    var Cabana = ViewBag.Cabana;
+}
+<style>
+    img {
+        width: 200px;
+        height: 200px;
+    }
+</style>
+<h1>Mantenimientos realizados</h1>
+
+<h2>Informacion de la cabana</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Tiene Jacuzzi?</th>
+            <th>Esta reservada?</th>
+            <th>Numero habitacion</th>
+            <th>Capacidad</th>
+            <th>Foto</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@Cabana.Nombre</td>
+            <td>@Cabana.Desc</td>
+            <td>@if (Cabana.HayJacuzzi) {<text>Si</text> }else{<text>no</text>}</td>
+            <td>@if (Cabana.HayReserva)
+                {
+                    <text>Si</text>
+                }
+                else
+                {
+                    <text>no</text>
+                }</td>
+            <td>@Cabana.NumHabitacion</td>
+            <td>@Cabana.CantPersMax</td>
+            <td><img src="@Url.Content("~/imgs/" + Cabana.Foto)"></td>
+        </tr>
+    </tbody>
+</table>
+<hr />
+<h3>Filtrar por fechas</h3>
+
+<div>
+    <form asp-action="MantenimientosDeCabana">
+        <label>Seleccione la primera fecha</label>
+        <input type="date" name="Fecha1" />
+        <label>Seleccione la segunda fecha</label>
+        <input type="date" name="Fecha2" />
+        <input type="hidden" value="@Cabana.Id" name="IdCabana"/>
+        <input type="submit" value="Buscar">
+    </form>
+</div>
+<hr>
+
+<h3>Resultados</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Costo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Tecnico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CabanaId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Costo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tecnico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CabanaId)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewData["Title"] = "Registro";
+}
+<h1>Registro de nuevo usuario</h1>
+@ViewBag.Error
+<form asp-action="Registro" method="post">
+    <label>Ingrese su nombre completo</label>
+    <input type="text" name="Nombre" />
+    <br />
+    <label>Ingrese su correo</label>
+    <input type="text" name="Correo" />
+    <br />
+    <label>Ingrese su usuario</label>
+    <input type="text" name="User" />
+    <br />
+    <label>Ingrese su contrasena</label>
+    <input type="password" name="Contrasena" />
+    <br />
+    <label>Verifique su contrasena</label>
+    <input type="password" name="ContrasenaVerificada" />
+    <br />
+    <input type="submit" value="Registrar usuario" />
+</form>

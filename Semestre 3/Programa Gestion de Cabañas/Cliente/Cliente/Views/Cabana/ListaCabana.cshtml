@@ -1,0 +1,87 @@
+﻿@model IEnumerable<Cliente.Models.Cabana>
+
+@{
+    ViewData["Title"] = "ListaCabana";
+    var s = TempData["Error"];
+}
+@if (s != null)
+{
+    <p>@s.ToString()</p>
+}
+<h1>ListaCabana</h1>
+
+<p>
+    <a asp-action="Alta">Registrar nueva cabana</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HayJacuzzi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HayReserva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumHabitacion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantPersMax)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Foto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.tipoCabId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HayJacuzzi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HayReserva)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumHabitacion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CantPersMax)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Foto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                    @Html.DisplayFor(modelItem => item.tipoCabId)
+            </td>
+            <td>
+                
+                    @Html.ActionLink("Mantenimiento nuevo", "AltaMant", new { Id=item.id})
+                    @Html.ActionLink("Detalles | Buscar mantenimientos", "BuscarMantFecha","Mantenimiento", new { IDCab=item.id})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

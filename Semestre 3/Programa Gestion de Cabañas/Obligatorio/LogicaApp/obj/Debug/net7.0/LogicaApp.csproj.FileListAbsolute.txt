@@ -1,0 +1,17 @@
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaApp\bin\Debug\net7.0\LogicaApp.deps.json
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaApp\bin\Debug\net7.0\LogicaApp.dll
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaApp\bin\Debug\net7.0\LogicaApp.pdb
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaApp\bin\Debug\net7.0\LogicaAccesoDatos.dll
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaApp\bin\Debug\net7.0\LogicaNegocio.dll
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaApp\bin\Debug\net7.0\LogicaAccesoDatos.pdb
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaApp\bin\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaApp\obj\Debug\net7.0\LogicaApp.csproj.AssemblyReference.cache
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaApp\obj\Debug\net7.0\LogicaApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaApp\obj\Debug\net7.0\LogicaApp.AssemblyInfoInputs.cache
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaApp\obj\Debug\net7.0\LogicaApp.AssemblyInfo.cs
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaApp\obj\Debug\net7.0\LogicaApp.csproj.CoreCompileInputs.cache
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaApp\obj\Debug\net7.0\LogicaApp.csproj.CopyComplete
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaApp\obj\Debug\net7.0\LogicaApp.dll
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaApp\obj\Debug\net7.0\refint\LogicaApp.dll
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaApp\obj\Debug\net7.0\LogicaApp.pdb
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaApp\obj\Debug\net7.0\ref\LogicaApp.dll

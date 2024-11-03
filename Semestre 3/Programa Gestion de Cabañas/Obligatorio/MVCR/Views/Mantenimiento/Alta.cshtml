@@ -1,0 +1,62 @@
+﻿@model MVCR.Models.ModelMantCab
+@{
+    ViewData["Title"] = "Alta";
+}
+<style>
+    img {
+        width: 200px;
+        height: 200px;
+    }
+</style>
+ <h1>Registrar mantenimiento a cabaña: @Html.DisplayFor(model => model.NombreCabana)</h1>
+ @ViewBag.Error
+
+ <table class="table">
+     <thead>
+         <tr>
+             <th>Nombre cabaña</th>
+             <th>Descripcion</th>
+             <th>Tiene jacuzzi?</th>
+             <th>Esta reservada?</th>
+             <th>Capacidad</th>
+             <th>Numero habitacion</th>
+             <th>Foto</th>
+         </tr>
+     </thead>
+     <tbody>
+         <tr>
+            <td>@Html.DisplayFor(model => model.NombreCabana)</td>
+            <td>@Html.DisplayFor(model => model.DescripcionCabana)</td>
+            <td>@Html.DisplayFor(model => model.HayJacuzzi)</td>
+            <td>@Html.DisplayFor(model => model.HayReserva)</td>
+            <td>@Html.DisplayFor(model => model.CantPersMax)</td>
+            <td>@Html.DisplayFor(model => model.NumHabitacion)</td>
+            <td><img src="@Url.Content("~/imgs/" + Model.Foto)"></td>
+         </tr>
+     </tbody>
+ </table>
+
+ <h2>Formulario mantenimiento</h2>
+ <form asp-action="Alta" method="post">
+    <div class="form-group">
+        <label>Seleccione fecha del mantenimiento</label>
+        <input name="Fecha" class="form-control" type="date"/>
+    </div>
+    <div class="form-group">
+        <label>Indique que se realizo en el mantenimiento</label>
+        <input name="Desc" class="form-control"/>
+    </div>
+    <div class="form-group">
+        <label>Ingrese el costo del mantenimiento</label>
+        <input name="Costo" class="form-control" type="number" />
+    </div>
+    <div class="form-group">
+        <label>Nombre del tecnico</label>
+        <input name="Tecnico" class="form-control" />
+    </div>
+    <input name="IdCab" value="@Model.IdCabana" type="hidden">
+    <input type="submit" value="Registrar" class="btn btn-primary">
+   
+        
+ </form>
+

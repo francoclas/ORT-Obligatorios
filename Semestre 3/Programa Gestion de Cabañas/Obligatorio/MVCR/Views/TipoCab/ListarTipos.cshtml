@@ -1,0 +1,49 @@
+﻿@model IEnumerable<LogicaNegocio.Entidades.TipoCab>
+
+@{
+    ViewData["Title"] = "ListarTipos";
+}
+
+<h1>Resultados</h1>
+    @ViewBag.Error
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CostoP)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostoP)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { Id = item.Id }) |
+                    @Html.ActionLink("Delete", "Baja_Confirmada", new { IdTipo= item.Id})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

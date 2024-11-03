@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "BuscaNombre";
+}
+<h1>Ingrese nombre a buscar</h1>
+<form asp-action="BuscaNombre" method="post">
+    <label> Ingrese nombre</label>
+    <input type="text" name="Nombre" />
+    <div class="form-group">
+        <input type="submit" value="buscar" class="btn btn-primary" />
+    </div>
+</form>

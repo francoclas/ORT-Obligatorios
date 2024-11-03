@@ -1,0 +1,30 @@
+﻿@{
+ViewData["Title"] = "AltaMant";
+ var s = TempData["Error"];
+}
+@if (s != null)
+{
+    <p>@s.ToString()</p>
+}
+<h2>Registrar mantenimiento en cabana</h2>
+<form asp-action="AltaMant" method="post">
+    <input type="hidden" name="IDCab" value="@ViewBag.Id"
+    <div>
+        <label>Ingrese nombre del tecnico</label>
+        <input type="text" name="Tecnico" />
+    </div>
+
+    <div>
+        <label>Ingrese descripcion de lo realizado</label>
+        <input type="text" name="Desc" />
+    </div>
+    <div>
+        <label>Ingrese costo del mantenimi.ento</label>
+        <input type="text" name="Precio" />
+    </div>
+    <div>
+        <label> Seleccione fecha</label>
+        <input type="datetime" name="Fecha"
+    </div>
+    <input type="submit" value="Enviar">
+</form>

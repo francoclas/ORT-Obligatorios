@@ -1,0 +1,17 @@
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaAplicacion\obj\Debug\net7.0\LogicaAccesoDatos.csproj.AssemblyReference.cache
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaAplicacion\obj\Debug\net7.0\LogicaAccesoDatos.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaAplicacion\obj\Debug\net7.0\LogicaAccesoDatos.AssemblyInfoInputs.cache
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaAplicacion\obj\Debug\net7.0\LogicaAccesoDatos.AssemblyInfo.cs
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaAplicacion\obj\Debug\net7.0\LogicaAccesoDatos.csproj.CoreCompileInputs.cache
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaAplicacion\bin\Debug\net7.0\LogicaAccesoDatos.deps.json
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaAplicacion\bin\Debug\net7.0\LogicaAccesoDatos.runtimeconfig.json
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaAplicacion\bin\Debug\net7.0\LogicaAccesoDatos.dll
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaAplicacion\bin\Debug\net7.0\LogicaAccesoDatos.pdb
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaAplicacion\bin\Debug\net7.0\LogicaNegocio.dll
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaAplicacion\bin\Debug\net7.0\LogicaNegocio.pdb
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaAplicacion\obj\Debug\net7.0\LogicaAccesoDatos.csproj.CopyComplete
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaAplicacion\obj\Debug\net7.0\LogicaAccesoDatos.dll
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaAplicacion\obj\Debug\net7.0\refint\LogicaAccesoDatos.dll
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaAplicacion\obj\Debug\net7.0\LogicaAccesoDatos.pdb
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaAplicacion\obj\Debug\net7.0\LogicaAccesoDatos.genruntimeconfig.cache
+C:\Users\Franco\Desktop\Obligatorio\Obligatorio\LogicaAplicacion\obj\Debug\net7.0\ref\LogicaAccesoDatos.dll

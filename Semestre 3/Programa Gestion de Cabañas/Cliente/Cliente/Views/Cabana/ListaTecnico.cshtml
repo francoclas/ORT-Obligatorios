@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Cliente.Models.TecDTO>
+
+@{
+    ViewData["Title"] = "ListaTecnico";
+    var s = TempData["Error"];
+}
+@if (s != null)
+{
+    <p>@s.ToString()</p>
+}
+
+<h1>Resultados</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tecnico)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MontoTotal)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tecnico)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MontoTotal)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

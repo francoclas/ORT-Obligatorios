@@ -1,0 +1,93 @@
+﻿@model IEnumerable<MVCR.Models.ModelCabCnTipo>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<style>
+    img{
+        width:200px;
+        height:200px;
+    }
+</style>
+<h1>Cabanas registradas en el sistema</h1>
+@ViewBag.Error
+<p>
+    <a asp-action="Alta">Registrar nueva Cabana</a>
+</p>
+<hr />
+<p>
+    <a asp-action="BuscarCabanas">Buscar cabañas</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Numero Habitacion
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HayJacuzzi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.HayReserva)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CantPersMax)
+            </th>        
+            <th>
+               Tipo de cabaña
+            </th>
+            <th>
+               Costo por persona
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Foto)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NumHabitacion)
+                </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HayJacuzzi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HayReserva)
+            </td>
+           
+            <td>
+                @Html.DisplayFor(modelItem => item.CantPersMax)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.NombreTipo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostoP)
+            </td>
+                <td>
+                    <img src="@Url.Content("~/imgs/" + item.Foto)">
+                </td>
+            <td>
+                    @Html.ActionLink("Generar mantenimiento", "Alta","Mantenimiento", new { Id=item.Id})|
+                    @Html.ActionLink("Lista de mantenimientos", "MantenimientosDeCabana","Mantenimiento", new { IdCabana=item.Id})
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

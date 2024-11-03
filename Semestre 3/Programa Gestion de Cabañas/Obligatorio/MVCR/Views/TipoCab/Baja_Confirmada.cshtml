@@ -1,0 +1,39 @@
+﻿@model LogicaNegocio.Entidades.TipoCab
+
+@{
+    ViewData["Title"] = "Baja_Confirmada";
+}
+
+<h1>Desea eliminar el siguiente tipo?</h1>
+ @ViewBag.Error
+<div>
+    <h4>TipoCab</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Desc)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Desc)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CostoP)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CostoP)
+        </dd>
+    </dl>
+</div>
+<div>
+    <h3>Seguro que quiere dar de baja este Tipo de Cabana</h3>
+    <form asp-action="BajaConfirmada" method="post">
+        <input type="hidden" value="@Model.Id" name="IdTipo" />
+        <input type="submit" value="Confirmar baja"/>
+    </form>
+</div>

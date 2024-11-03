@@ -1,0 +1,63 @@
+﻿@model MVCR.Models.ModelCabana
+
+@{
+    ViewData["Title"] = "Alta";
+}
+
+<h1>Registro de nueva cabaña</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Alta" enctype="multipart/form-data" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <label>Tipo de cabaña</label>
+            <select name="IdTipo">
+                <option value="" disabled selected>Selecciona una opción</option>
+                @foreach (var item in ViewBag.Tipos)
+                {
+                    <option value="@item.Id"> @item.Nombre</option>
+                }
+            </select>
+            <div class="form-group">
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Desc" class="control-label">Descripcion</label>
+                <input asp-for="Desc" class="form-control" />
+                <span asp-validation-for="Desc" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="HayJacuzzi" /> ¿La cabaña cuenta con jacuzzi?
+                </label>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="HayReserva" /> ¿Ya se encuentra reservada?
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="NumHabitacion" class="control-label">Numero de habitacion</label>
+                <input asp-for="NumHabitacion" class="form-control" />
+                <span asp-validation-for="NumHabitacion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CantPersMax" class="control-label">Cantidad maxima de personas</label>
+                <input asp-for="CantPersMax" class="form-control" />
+                <span asp-validation-for="CantPersMax" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Img" class="control-label">Foto de la cabaña</label>
+                <input asp-for="Img" class="form-control" />
+                <span asp-validation-for="Foto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Crear" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "Login";
+}
+<h1>Inicio de sesion</h1>
+@ViewBag.Error
+<h4>Ingrese sus credenciales</h4>
+<Form asp-action="Login" method="post">
+    <label>Ingrese su correo</label>
+    <input type="text" name="Correo"/>
+    <br />
+    <label>Ingrese su contraseña</label>
+    <input type="password" name="Contrasena" />
+    <br />
+    <input type="submit" value="Iniciar sesion"/>
+</Form>
+<h2>No cuentas con usuario? Te puedes registrar aqui</h2>
+<a asp-action="Registro">Registrarse</a>

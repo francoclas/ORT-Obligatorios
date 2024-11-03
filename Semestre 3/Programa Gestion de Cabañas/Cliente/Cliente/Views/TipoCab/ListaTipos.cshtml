@@ -1,0 +1,66 @@
+﻿@model IEnumerable<Cliente.Models.TipoCab>
+
+@{
+    ViewData["Title"] = "ListaTipos";
+    var s = TempData["Error"];
+}
+@if (s != null)
+{
+    <p>@s.ToString()</p>
+}
+<h1>Todos los tipos</h1>
+@ViewBag.Error
+
+<p>
+    <a asp-action="Alta">Generar nuevo</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Desc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CostoP)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CostoP)
+            </td>
+            <td>
+                    @Html.ActionLink("Modificar","ModificarTipo", new { Id = item.Id })|
+                    @Html.ActionLink("Eliminar", "EliminarTipo", new { Id = item.Id })|
+            </td>
+            <td>
+                    <form asp-action="BuscarMonto" method="Post">
+                    <label>Ingrese monto a buscar</label>
+                    <input type="Hidden" name="IdTipo" value="@item.Id"/>
+                    <input type="text" name="Monto">
+                    <input type="submit" value="Buscar"/>
+
+                </form>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
