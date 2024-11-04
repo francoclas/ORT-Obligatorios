@@ -14,4 +14,5 @@ import dominio.tads.lista.Lista;
         boolean sonAdyacentes(String v1, String v2);
         boolean existeVertice (String v);
         Grafo crearGrafoVacio(int cantMaxDeVertices);
+        boolean verticeCritico(String v);
     }

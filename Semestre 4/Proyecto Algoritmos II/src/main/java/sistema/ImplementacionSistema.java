@@ -68,7 +68,8 @@ public class ImplementacionSistema implements Sistema {
         //Declaro variable String para la posible salida
         resultadobusquedaJugador Salida = buscarJugadorRec(alias);
         //Verifico si la busqueda encontro algo, por defecto si no encontro devolvera "";
-        if(Salida.valorString == null ||Salida.valorString.isEmpty()) return new Retorno(Retorno.Resultado.ERROR_2,Salida.valorEntero,"No se encontro jugador con el alias: " + alias);
+        if(Salida.valorString == null ||Salida.valorString.isEmpty())
+            return new Retorno(Retorno.Resultado.ERROR_2,Salida.valorEntero,"No se encontro jugador con el alias: " + alias);
         //En este caso encontro devuelvo el string recibido del ToString() del jugador, debo setear el valorInteger a la cantidad de elementos recorridos
         return new Retorno(Retorno.Resultado.OK,Salida.valorEntero,Salida.valorString);
 
@@ -89,8 +90,6 @@ public class ImplementacionSistema implements Sistema {
     //Ejercicio 5 -
     public Retorno listarJugadoresPorCategoria(Categoria unaCategoria) {
         return new Retorno(Retorno.Resultado.OK,0,BuscarJugadoresPorCategoria(unaCategoria));
-
-
     }
 
     //Ejercicio 6 - Genero instancia y mando a sistema

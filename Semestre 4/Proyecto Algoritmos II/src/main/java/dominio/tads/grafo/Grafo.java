@@ -166,4 +166,11 @@ public class Grafo implements IGrafo{
     public Grafo crearGrafoVacio(int cantMaxDeVertices) {
         return null;
     }
+
+
+
+    @Override
+    public boolean verticeCritico(String v) {
+        return false;
+    }
 }
