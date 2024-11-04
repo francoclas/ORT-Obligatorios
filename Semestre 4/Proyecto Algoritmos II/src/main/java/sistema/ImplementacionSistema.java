@@ -246,7 +246,22 @@ public class ImplementacionSistema implements Sistema {
 
     @Override
     public Retorno analizarSucursal(String codigoSucursal) {
-        return Retorno.noImplementada();
+        //Reviso valor ingresado
+        if (codigoSucursal == null || codigoSucursal.isEmpty()){
+            return Retorno.error1("El codigo no puede ser null o vacio");
+        }
+        if (!existeSucursal(codigoSucursal)){
+            return Retorno.error2("No existe sucursal con ese codigo");
+        }
+        String Salida = "";
+        //Llamo a mi grafo de conexiones y consulto por la sucursal
+        if (ConexionesSucursales.verticeCritico(codigoSucursal)){
+            Salida = "Si";
+        }else{
+            Salida = "No";
+        }
+        return new Retorno(Retorno.Resultado.OK,0,Salida);
+
     }
 
     @Override
@@ -275,7 +290,8 @@ public class ImplementacionSistema implements Sistema {
         }
         return Salida;
     }
-    //Como el ejercicio 05, pide hacer un filtro que no corresponde a un objeto generico tipo T, se realizan las siguientes funciones con el objetivo de resolverlo
+    //Como el ejercicio 05, pide hacer un filtro que no corresponde a un objeto generico tipo T,
+    //se realizan las siguientes funciones con el objetivo de resolverlo
     private String BuscarJugadoresPorCategoria(Categoria catAux){
         return filtrarJugadores(JugadoresSist.obtenerRaiz(),catAux);
         //Revisar
@@ -294,7 +310,6 @@ public class ImplementacionSistema implements Sistema {
             }
         }
         return "";
-
     }
     private boolean existeSucursal(String codSucursal){
         /*

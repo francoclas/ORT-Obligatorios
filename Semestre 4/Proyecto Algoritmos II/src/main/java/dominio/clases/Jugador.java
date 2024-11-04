@@ -25,31 +25,24 @@ public class Jugador implements Comparable<Jugador> {
         public String getAlias() {
             return Alias;
         }
-
         public void setAlias(String alias) {
             Alias = alias;
         }
-
         public String getNombre() {
             return Nombre;
         }
-
         public void setNombre(String nombre) {
             Nombre = nombre;
         }
-
         public String getApellido() {
             return Apellido;
         }
-
         public void setApellido(String apellido) {
             Apellido = apellido;
         }
-
         public Categoria getCategoria() {
             return categoria;
         }
-
         public void setCategoria(Categoria categoria) {
             this.categoria = categoria;
         }
@@ -74,8 +67,6 @@ public class Jugador implements Comparable<Jugador> {
             //Esta formateado para la salida de los listados en puntos
             return this.Alias + ";" + this.Nombre + ";" + this.Apellido + ";" + categoria.getTexto();
         }
-
-
     //Funciones aux
     public boolean esPro() {
         if (categoria.getTexto().equals("Profesional")){

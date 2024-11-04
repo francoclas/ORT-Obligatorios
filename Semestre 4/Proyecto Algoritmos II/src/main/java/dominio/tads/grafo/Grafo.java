@@ -171,6 +171,34 @@ public class Grafo implements IGrafo{
 
     @Override
     public boolean verticeCritico(String v) {
+        /*Para verificar si es critico, voy agenerar un array de vertices, marcar el solicitado como verdadero
+        Luego itero mediante DFS, para ver si me quedo alguno sin marcar, si alguno queda sin revisar
+        el vertice es critico.
+        */
+        boolean [] Vertices = new boolean[cantActualvertices];
+        //Marco el solicitado como visitado
+        Vertices[this.obtenerPosVertice(v)] = true;
+        //Comienzo el DFS
+        //Para empezar busco
+
+
+        //Al terminar reviso si tengo todos mis vertices visitados, si no es el caso, el vertice es critico
+        for (int i = 0; i < cantActualvertices; i++) {
+            if (!Vertices[i]) {
+                return true;
+            }
+        }
         return false;
+    }
+    private void dfsCritico(int pos,boolean []visitados){
+        //Seteo el vertice recibido como visitado
+        visitados[pos] = true;
+        //Reviso las conexion de mi vertice, si existe, y no esta visitado. Lo visito con DFS
+        for(int i = 0; i < this.cantMaxVertices; ++i) {
+            if (this.matAdy[pos][i].isExiste() && !visitados[i]) {
+                this.dfsRec(i, visitados);
+            }
+        }
+
     }
 }
