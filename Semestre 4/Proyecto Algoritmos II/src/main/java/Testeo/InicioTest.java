@@ -82,8 +82,8 @@ public class InicioTest {
             System.out.println(ListaJugadoresEquipo.getValorString());
             System.out.println("----------------------------------------------------------------------");
         //Listar por jugadores por categoria - Ejercicio 5
-            Retorno ListaJugadoresCategoria = Sis.listarJugadoresPorCategoria(Categoria.ESTANDARD);
-            System.out.println("Listado de jugadores profesionales");
+            Retorno ListaJugadoresCategoria = Sis.listarJugadoresPorCategoria(Categoria.PROFESIONAL);
+            System.out.println("Listado de jugadores estandar");
             System.out.println(ListaJugadoresCategoria.getValorString());
             System.out.println("----------------------------------------------------------------------");
         //Buscar un jugador
