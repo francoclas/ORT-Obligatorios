@@ -175,21 +175,86 @@ public class Grafo implements IGrafo{
         Luego itero mediante DFS, para ver si me quedo alguno sin marcar, si alguno queda sin revisar
         el vertice es critico.
         */
-        boolean [] Vertices = new boolean[cantActualvertices];
+
+        //Obtengo el subgrafo de la region de mi vertice
+        Grafo RegionVertice = dfsGeneradorSubgrafo(v);
         //Marco el solicitado como visitado
-        Vertices[this.obtenerPosVertice(v)] = true;
-        //Comienzo el DFS
-        //Para empezar busco
-
-
-        //Al terminar reviso si tengo todos mis vertices visitados, si no es el caso, el vertice es critico
-        for (int i = 0; i < cantActualvertices; i++) {
-            if (!Vertices[i]) {
+        boolean [] VerticesSubgrafo =  new boolean [RegionVertice.cantMAxVertices];
+        //Busco mi vertice a verificar si es critico y lo marco como verdadero, para luego en el DFS, evitar que se revisen sus conexiones.
+        VerticesSubgrafo[RegionVertice.obtenerPosVertice(v)] = true;
+        //Aplico DFS, creo una nueva variable para poder hacer recursiva
+        int verticeAux = 0;
+        if (verticeAux == RegionVertice.obtenerPosVertice(v)){
+            verticeAux = 1;
+        }
+        dfsRecursivo(verticeAux,VerticesSubgrafo);
+        //Al terminar reviso si tengo todos mis vertices visitados, si todos son verdaderos no es critico, si no es el caso, el vertice es critico
+        for (int i = 0; i < VerticesSubgrafo.length; i++) {
+            if (!VerticesSubgrafo[i]) {
                 return true;
             }
         }
         return false;
     }
+    private Grafo dfsGeneradorSubgrafo(String vertice){
+        //Genero array del grafo general
+        boolean [] visitados = new boolean[this.cantMAxVertices];
+        int pos = this.obtenerPosVertice(vertice);
+        //Mando el array a dfs, para ver los nodos que estan relacionados con el vertice ingresado
+        this.dfsRecursivo(pos,visitados);
+        //Itero sobre los visitados, a partir de estos, obtengo la cantidad de vertices del nuevo    ubgrafo
+        int cantVerticesSubGrafo = 0;
+        for (int i = 0; i < visitados.length; i++) {
+            if (visitados[i]) {
+                cantVerticesSubGrafo++;
+            }
+        }
+        //genero nuevo subgrafo y devuelvo
+        Grafo Salida = new Grafo(cantVerticesSubGrafo,this.esDirigido);
+        //Cargo los vertices que forman parte del grafo de la region solicitad, al subgrafo
+        for (int i = 0; i < visitados.length; i++){
+            //Verifico que no sea el valor vertice que es el primero
+            if (visitados[i]) {
+                Salida.agregarVertice(vertices[i]);
+            }
+        }
+        //Vuelvo a recorrer para agregar las conexiones del subgrafo
+        for (int i = 0; i< visitados.length; i++){
+            if (visitados[i]) {
+                //Vuelvo a iterar buscando las conexiones
+                for (int j = 0; i< visitados.length; j++){
+                    if (visitados[j] && this.matAdy[i][j].isExiste()){
+                        //Agrego la conexion al subgrafo
+                        Salida.agregarArista(vertices[i],vertices[j],matAdy[i][j].getPeso());
+                    }
+                }
+            }
+        }
+        return Salida;
+    }
+    private void dfsRecursivo(int pos,boolean []visitados){
+        //Marco la posicion recibida como verdadero
+        visitados[pos] = true;
+        //Itero por sus conexiones
+        for (int i = 0; i < this.cantMAxVertices; ++i){
+            if (this.matAdy[pos][i].isExiste() && !visitados[i]) {
+                this.dfsRecursivo(i,visitados);
+            }
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
     private void dfsCritico(int pos,boolean []visitados){
         //Seteo el vertice recibido como visitado
         visitados[pos] = true;
