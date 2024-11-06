@@ -13,6 +13,12 @@ public class ImplementacionSistema implements Sistema {
     public static int maxSucursalesSet;
     public static int sucursalesActual = 0;
     private ABB<Jugador>JugadoresSist;
+
+    //Jugadores por categoria
+    private ABB<Jugador>JugadoresPro;
+    private ABB<Jugador>JugadoresEstandar;
+    private ABB<Jugador>JugadoresPrincipiante;
+
     private ABB<Equipo> EquiposSist;
     private ABB<Sucursal> SucursalesSist;
     private Grafo ConexionesSucursales;
@@ -26,6 +32,10 @@ public class ImplementacionSistema implements Sistema {
         }
         maxSucursalesSet = maxSucursales;
         JugadoresSist = new ABB<Jugador>();
+        JugadoresEstandar = new ABB<Jugador>();
+        JugadoresPrincipiante = new ABB<Jugador>();
+        JugadoresPro = new ABB<Jugador>();
+
         EquiposSist = new ABB<Equipo>();
         SucursalesSist = new ABB<Sucursal>();
         ConexionesSucursales = new Grafo(maxSucursales);
@@ -52,6 +62,17 @@ public class ImplementacionSistema implements Sistema {
             return Retorno.error2("Ya existe jugador con ese alias");
         //Si no esta lo cargo
         JugadoresSist.insertar(nuevo);
+        //Lo cargo en su categoria especifica
+
+        int indice = nuevo.getCategoria().getIndice();
+
+        if(indice == 0) JugadoresPrincipiante.insertar(nuevo);
+if(indice == 1)                JugadoresEstandar.insertar(nuevo);
+if (indice == 2)               JugadoresPro.insertar(nuevo);
+                ;
+
+
+
         return Retorno.ok();
     }
 
@@ -89,7 +110,11 @@ public class ImplementacionSistema implements Sistema {
     @Override
     //Ejercicio 5 -
     public Retorno listarJugadoresPorCategoria(Categoria unaCategoria) {
-        return new Retorno(Retorno.Resultado.OK,0,BuscarJugadoresPorCategoria(unaCategoria));
+           int indice = unaCategoria.getIndice();
+               if(indice ==0 ){return new Retorno(Retorno.Resultado.OK,0,JugadoresPrincipiante.listarAscendentemente());}
+               if(indice == 1) {return new Retorno(Retorno.Resultado.OK,0,JugadoresEstandar.listarAscendentemente());}
+               if (indice ==2){return new Retorno(Retorno.Resultado.OK,0,JugadoresPro.listarAscendentemente());}
+    return null;
     }
 
     //Ejercicio 6 - Genero instancia y mando a sistema
