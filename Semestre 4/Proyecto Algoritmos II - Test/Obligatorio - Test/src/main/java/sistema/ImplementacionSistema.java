@@ -1,24 +1,23 @@
 package sistema;
 
-import dominio.clases.Equipo;
-import dominio.clases.Jugador;
-import dominio.clases.Sucursal;
-import dominio.clases.resultadobusquedaJugador;
+import dominio.Equipo;
+import dominio.Jugador;
+import dominio.Sucursal;
+import dominio.resultadobusquedaJugador;
 import dominio.tads.abb.ABB;
 import dominio.tads.abb.NodoABBGen;
 import dominio.tads.grafo.Grafo;
 import interfaz.*;
 
 public class ImplementacionSistema implements Sistema {
-    public static int maxSucursalesSet;
-    public static int sucursalesActual = 0;
+    public int maxSucursalesSet;
+    public int sucursalesActual = 0;
     private ABB<Jugador>JugadoresSist;
 
     //Jugadores por categoria
     private ABB<Jugador>JugadoresPro;
     private ABB<Jugador>JugadoresEstandar;
     private ABB<Jugador>JugadoresPrincipiante;
-
     private ABB<Equipo> EquiposSist;
     private ABB<Sucursal> SucursalesSist;
     private Grafo ConexionesSucursales;
@@ -27,19 +26,18 @@ public class ImplementacionSistema implements Sistema {
     //Ejercicio 1 - Inicializar sistema
     @Override
     public Retorno inicializarSistema(int maxSucursales) {
-        if (maxSucursales <= 3){
-            return Retorno.error1("El maximo de sucursales no puede ser menor o igual a 3");
-        }
-        maxSucursalesSet = maxSucursales;
-        JugadoresSist = new ABB<Jugador>();
-        JugadoresEstandar = new ABB<Jugador>();
-        JugadoresPrincipiante = new ABB<Jugador>();
-        JugadoresPro = new ABB<Jugador>();
-
-        EquiposSist = new ABB<Equipo>();
-        SucursalesSist = new ABB<Sucursal>();
-        ConexionesSucursales = new Grafo(maxSucursales);
-        return Retorno.ok();
+            if (maxSucursales <= 3){
+                return Retorno.error1("El maximo de sucursales no puede ser menor o igual a 3");
+            }
+            JugadoresSist = new ABB<Jugador>();
+            JugadoresPro = new ABB<Jugador>();
+            JugadoresEstandar= new ABB<Jugador>();
+            JugadoresPrincipiante = new ABB<Jugador>();
+            EquiposSist = new ABB<Equipo>();
+            SucursalesSist =new ABB<Sucursal>();
+            maxSucursalesSet = maxSucursales;
+            ConexionesSucursales = new Grafo(maxSucursales,false);
+            return Retorno.ok();
     }
 
     @Override
@@ -52,7 +50,7 @@ public class ImplementacionSistema implements Sistema {
          3- Genero instancia del nuevo jugador y la cargo al arbol de jugador
         */
         //Verifico los valores recibidos
-        if (alias.isEmpty() || alias == null || nombre.isEmpty() || nombre == null || apellido.isEmpty() || apellido == null){
+        if (alias == null || alias.isEmpty() || nombre == null  || nombre.isEmpty() || apellido == null || apellido.isEmpty() ||categoria == null){
             return Retorno.error1("Debe completar todos los campos");
         }
         //Instancio nuevo jugador
@@ -79,7 +77,7 @@ public class ImplementacionSistema implements Sistema {
            2-Busco dentro del arbol, si no existo tiro excepcion
         */
 
-        if (alias == null || alias == "") return new Retorno(Retorno.Resultado.ERROR_1,0,"El alias no puede ser vacio o null");
+        if (alias == null || alias.isEmpty()) return new Retorno(Retorno.Resultado.ERROR_1,0,"El alias no puede ser vacio o null");
         //Declaro variable String para la posible salida
         resultadobusquedaJugador Salida = buscarJugadorRec(alias);
         //Verifico si la busqueda encontro algo, por defecto si no encontro devolvera "";
@@ -115,7 +113,7 @@ public class ImplementacionSistema implements Sistema {
     @Override
     public Retorno registrarEquipo(String nombre, String manager) {
         //Verifico que los datos ingresados no esten vacios
-        if (nombre.isEmpty() || nombre == null ||manager.isEmpty() || manager == null){
+        if (nombre == null ||nombre.isEmpty() || manager == null|| manager.isEmpty() ){
             return Retorno.error1("Debe completar todos los campos");
         }
         //Instancio un nuevo equipo
@@ -133,12 +131,11 @@ public class ImplementacionSistema implements Sistema {
     @Override
     public Retorno agregarJugadorAEquipo(String nombreEquipo, String aliasJugador) {
         //Validacion de datos
-           if (nombreEquipo.isEmpty() ||nombreEquipo == null || aliasJugador.isEmpty() || aliasJugador == null){
+           if (nombreEquipo == null ||nombreEquipo.isEmpty() || aliasJugador == null ||  aliasJugador.isEmpty() ){
                 return Retorno.error1("Debe completar todos los campos");
             }
         //Obtengo jugador y equipo desde sistema
             Equipo equipoAux = EquiposSist.buscarDato(new Equipo(nombreEquipo));
-
             if (equipoAux == null){
                 return Retorno.error2("No existe equipo con ese nombre");
             }
@@ -192,7 +189,7 @@ public class ImplementacionSistema implements Sistema {
         if (sucursalesActual == maxSucursalesSet)
             return Retorno.error1("Ya se encuentra el maximo de sucursales");
         //Reviso valores
-        if (codigo.isEmpty() || codigo == null || nombre.isEmpty() || nombre == null)
+        if (codigo == null ||codigo.isEmpty() || nombre == null ||  nombre.isEmpty() )
             return Retorno.error2("Verifique los datos ingresados");
         //Instancio Sucursal
         Sucursal SucursalAux = new Sucursal(codigo,nombre);
@@ -205,6 +202,7 @@ public class ImplementacionSistema implements Sistema {
         */
         ConexionesSucursales.agregarVertice(SucursalAux.getCodigo());
         SucursalesSist.insertar(SucursalAux);
+        sucursalesActual++;
         return Retorno.ok();
     }
 
@@ -275,9 +273,9 @@ public class ImplementacionSistema implements Sistema {
         String Salida = "";
         //Llamo a mi grafo de conexiones y consulto por la sucursal
         if (ConexionesSucursales.verticeCritico(codigoSucursal)){
-            Salida = "Si";
+            Salida = "SI";
         }else{
-            Salida = "No";
+            Salida = "NO";
         }
         return new Retorno(Retorno.Resultado.OK,0,Salida);
 

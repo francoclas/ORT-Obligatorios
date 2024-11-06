@@ -183,12 +183,17 @@ public class Grafo implements IGrafo{
         boolean [] VerticesSubgrafo =  new boolean [RegionVertice.cantMAxVertices];
         //Busco mi vertice a verificar si es critico y lo marco como verdadero, para luego en el DFS, evitar que se revisen sus conexiones.
         VerticesSubgrafo[RegionVertice.obtenerPosVertice(v)] = true;
+        //Si mi grafo solo tiene un vertice corresponde a no ser virtualmente critico.
+        if (VerticesSubgrafo.length == 1){
+            return false;
+        }
         //Aplico DFS, creo una nueva variable para poder hacer recursiva
+
         int verticeAux = 0;
         if (verticeAux == RegionVertice.obtenerPosVertice(v)){
             verticeAux = 1;
         }
-        dfsRecursivo(verticeAux,VerticesSubgrafo);
+        RegionVertice.dfsRecursivo(verticeAux,VerticesSubgrafo);
         //Al terminar reviso si tengo todos mis vertices visitados, si todos son verdaderos no es critico, si no es el caso, el vertice es critico
         for (int i = 0; i < VerticesSubgrafo.length; i++) {
             if (!VerticesSubgrafo[i]) {
@@ -223,7 +228,7 @@ public class Grafo implements IGrafo{
         for (int i = 0; i< visitados.length; i++){
             if (visitados[i]) {
                 //Vuelvo a iterar buscando las conexiones
-                for (int j = 0; i< visitados.length; j++){
+                for (int j = 0; j< visitados.length; j++){
                     if (visitados[j] && this.matAdy[i][j].isExiste()){
                         //Agrego la conexion al subgrafo
                         Salida.agregarArista(vertices[i],vertices[j],matAdy[i][j].getPeso());
@@ -237,7 +242,7 @@ public class Grafo implements IGrafo{
         //Marco la posicion recibida como verdadero
         visitados[pos] = true;
         //Itero por sus conexiones
-        for (int i = 0; i < this.cantMAxVertices; ++i){
+        for (int i = 0; i < visitados.length; ++i){
             if (this.matAdy[pos][i].isExiste() && !visitados[i]) {
                 this.dfsRecursivo(i,visitados);
             }

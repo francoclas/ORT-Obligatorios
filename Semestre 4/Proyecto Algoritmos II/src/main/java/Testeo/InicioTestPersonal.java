@@ -9,7 +9,7 @@ import sistema.ImplementacionSistema;
     Esta clase tiene  como funcion probar todos los ejercicios solicitados por la letra del obligatorio.
 
  */
-public class InicioTest {
+public class InicioTestPersonal {
     public static void main(String[] args) {
 
         ImplementacionSistema Sis = new ImplementacionSistema();
