@@ -12,4 +12,6 @@ public interface IABB <T extends Comparable<T>> {
     public boolean existe(T dato);
 
     public NodoABBGen<T> obtenerRaiz();
+
+    public String listarAscendenteporLista(String [] Lista);
 }

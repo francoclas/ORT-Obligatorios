@@ -1,5 +1,6 @@
 package dominio.tads.abb;
 import  dominio.tads.lista.Lista;
+import dominio.tads.lista.Nodo;
 
 
 public class ABB<T extends Comparable<T>> implements IABB<T>{
@@ -88,7 +89,7 @@ public class ABB<T extends Comparable<T>> implements IABB<T>{
     }
     private String listarDesc(NodoABBGen<T> nodo){
         if (nodo != null) {
-            return listarDesc(nodo.getDer()) + " | " + nodo.getDato() + " | " + listarDesc(nodo.getIzq());
+            return listarDesc(nodo.getDer()) + nodo.getDato() + "|" + listarDesc(nodo.getIzq());
         }
         return "";
     }
@@ -107,6 +108,31 @@ public class ABB<T extends Comparable<T>> implements IABB<T>{
         }
     }
 
+    //La idea de la funcion es iterar encontrando las casualidades de los valores recibidos. Se utiliza para resolver el ejercicio 14
+    @Override
+    public String listarAscendenteporLista(String[] Lista) {
+        if (this.raiz != null) {
+            return listarAscListaRec(Lista,raiz);
+        } else {
+            return null;
+        }
+    }
+    private String listarAscListaRec(String[] Lista, NodoABBGen<T>nodo){
+        if (nodo!= null){
+            //Caso base
+            String Aux = "";
+            Aux += listarAscListaRec(Lista,nodo.getIzq()) + "|";
+            for (int i = 0; i <Lista.length ; i++) {
+                if (nodo.getDato().equals(Lista[i])){
+                    Aux += nodo.getDato().toString();
+                }
+                return listarAscListaRec(Lista, nodo.getIzq());
+            }
+            Aux +=listarAscListaRec(Lista,nodo.getDer());
+            return Aux;
+        }
+        return "";
+    }
 
     private boolean existe(NodoABBGen<T> nodo, T dato) {
         if (nodo != null) {

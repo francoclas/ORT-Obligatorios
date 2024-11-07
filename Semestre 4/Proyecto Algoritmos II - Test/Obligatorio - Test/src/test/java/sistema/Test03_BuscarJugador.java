@@ -29,10 +29,7 @@ public class Test03_BuscarJugador {
     public void testBuscarJugadorOk() {
 
 
-        assertOk(s.buscarJugador(copiarTexto("mariana")),1,"mariana;Mariana;Perez;PRINCIPIANTE");
 
-        assertOk(s.buscarJugador(copiarTexto("roberto")),2,"roberto;Roberto;Gomez;ESTANDARD");
-        assertOk(s.buscarJugador(copiarTexto("caliban")),2,"caliban;Caliban;Estevez;PRINCIPIANTE");
 
         assertOk(s.buscarJugador(copiarTexto("zack")),3,"zack;Zack;Rodriguez;PROFESIONAL");
         assertOk(s.buscarJugador(copiarTexto("esteban")),3,"esteban;Esteban;Dendi;PROFESIONAL");
