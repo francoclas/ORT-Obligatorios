@@ -13,5 +13,4 @@ import dominio.tads.lista.Lista;
         Lista<String> verticesAdyacentes(String v);
         boolean sonAdyacentes(String v1, String v2);
         boolean verticeCritico(String v);
-        public PesoYLista BuscarConexionLimitePeso(String vInicial, int pesoLimite);
     }

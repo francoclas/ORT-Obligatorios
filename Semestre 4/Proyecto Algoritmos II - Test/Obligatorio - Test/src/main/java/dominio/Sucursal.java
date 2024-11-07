@@ -1,7 +1,6 @@
 package dominio;
 
 import java.util.Objects;
-
 public class Sucursal implements Comparable<Sucursal> {
     private String Codigo;
     private String Nombre;
@@ -14,15 +13,12 @@ public class Sucursal implements Comparable<Sucursal> {
     public Sucursal(String codigo) {
         this.Codigo = codigo;
 
-
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         return this.Codigo.equals(o);
     }
-
     @Override
     public int hashCode() {
         return Objects.hashCode(Codigo);

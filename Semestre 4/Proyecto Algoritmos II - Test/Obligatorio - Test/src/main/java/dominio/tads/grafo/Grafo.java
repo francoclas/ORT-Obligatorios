@@ -3,15 +3,13 @@ package dominio.tads.grafo;
 import dominio.tads.lista.Lista;
 
 public class Grafo implements IGrafo{
+    public int cantMAxVertices;
+    public int cantActualvertices;
 
+    public boolean esDirigido;
 
-    private int cantMAxVertices;
-    private int cantActualvertices;
-
-    private boolean esDirigido;
-
-    private String[] vertices;
-    private Arista[][] matAdy;
+    public String[] vertices;
+    public Arista[][] matAdy;
 
     public Grafo(int cantMAxVertices) {
         this.cantMAxVertices = cantMAxVertices;
@@ -71,7 +69,7 @@ public class Grafo implements IGrafo{
         }
     }
 
-    private int obtenerPosVertice(String v) {
+    public int obtenerPosVertice(String v) {
         for (int i = 0; i < this.cantMAxVertices; i++) {
             if (this.vertices[i].equals(v)) {
                 return i;
@@ -235,92 +233,6 @@ public class Grafo implements IGrafo{
         }
     }
 
-    @Override
-    public PesoYLista BuscarConexionLimitePeso(String vInicial, int pesoLimite) {
-        PesoYLista Salida = new PesoYLista();
-        //Genero estructuras basicas
-        int posOrigen = this.obtenerPosVertice(vInicial);
-        boolean[] visitados = new boolean[this.cantActualvertices];
-        int[] costos = new int[this.cantActualvertices];
-        int[] anteriores = new int[this.cantActualvertices];
-        //Los inicializo
-        int minPos;
-        for (minPos = 0; minPos < this.cantActualvertices; ++minPos) {
-            visitados[minPos] = false;
-            costos[minPos] = Integer.MAX_VALUE;
-            anteriores[minPos] = -1;
-        }
-        //Marco el origen como 0, y visitado
-        costos[posOrigen] = 0;
-        visitados[posOrigen] = true;
-        //Itero sobre los demas vertices
-        for(minPos = posOrigen; minPos > -1; minPos = this.obtenerPosMenorCostoNoVisitado(costos, visitados,pesoLimite)){
-            this.actualizarCostosAnteriores(minPos, costos, visitados, anteriores);
-        }
-
-        Salida.setListaSalida(GenerarStringConexiones(visitados));
-        Salida.setPesoMaximo(ObtenerPesoMaximo(costos,visitados));
-        return Salida;
-    }
-
-    private int ObtenerPesoMaximo(int[] costos,boolean[] visitados) {
-        int Salida = Integer.MIN_VALUE;
-        for (int i = 0; i < costos.length; i++) {
-            if (visitados[i]) {
-                if (costos[i] > Salida) {
-                    Salida = costos[i];
-                }
-            }
-        }
-        return Salida;
-    }
-
-    private String[] GenerarStringConexiones(boolean[] visitados) {
-        int Aux = 0;
-        for (int i = 0; i < visitados.length; i++) {
-            if (visitados[i]){
-                Aux++;
-            }
-        }
-        String [] Salida = new String[Aux];
-        int ContadorSalida = 0;
-        for (int i = 0; i < visitados.length; i++) {
-            if (visitados[i]){
-                Salida[ContadorSalida] = vertices[i];
-                ContadorSalida++;
-            }
-        }
-
-        return Salida;
-    }
-
-    private void actualizarCostosAnteriores(int posActual, int []costos,boolean [] visitados,int []anteriores){
-        for (int i = 0; i < this.cantActualvertices; i++) {
-            if (i != posActual) {
-                int costoVerticeActual = costos[posActual] + this.matAdy[posActual][i].getPeso();
-                //Tambien agrego el peso como factor, si es mayor ya no debo iterar
-                if (this.matAdy[posActual][i].isExiste() && !visitados[i] && costos[i] > costoVerticeActual){
-                    costos[i] = costoVerticeActual;
-                    anteriores[i] = posActual;
-                }
-            }
-        }
-    }
-    private int obtenerPosMenorCostoNoVisitado(int[] costos, boolean[] visitados, int pesoLimite) {
-        int minCosto = Integer.MAX_VALUE;
-        int posMenorCosto = -1;
-        for(int i = 0; i < this.cantActualvertices; ++i) {
-            if (!visitados[i] && costos[i] < minCosto && costos[i] <= pesoLimite) {
-
-                minCosto = costos[i];
-                posMenorCosto = i;
-            }
-        }
-        if (posMenorCosto > -1){
-            visitados[posMenorCosto] = true;
-        }
-        return posMenorCosto;
-    }
     private String[] OrdenarSegunCosto(int[] anteriores){
         String [] Salida = new String[anteriores.length];
         for (int i = 0; i < Salida.length; i++) {

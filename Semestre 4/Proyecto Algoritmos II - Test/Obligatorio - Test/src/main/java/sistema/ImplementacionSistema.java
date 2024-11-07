@@ -97,17 +97,29 @@ public class ImplementacionSistema implements Sistema {
            Debe ser ordenados por alias alfabeticamente de manera creciente
            Formato: "alias#1;Nombre#1;apellido#1;categoria#1 | alias#2;Nombre#2;apellido#2;categoria#2
          */
-        return new Retorno(Retorno.Resultado.OK,0,JugadoresSist.listarAscendentemente());
+        return new Retorno(Retorno.Resultado.OK,0,CortarUltimo(JugadoresSist.listarAscendentemente()));
     }
 
     @Override
     //Ejercicio 5 -
     public Retorno listarJugadoresPorCategoria(Categoria unaCategoria) {
-           int indice = unaCategoria.getIndice();
-               if(indice ==0 ){return new Retorno(Retorno.Resultado.OK,0,JugadoresPrincipiante.listarAscendentemente());}
-               if(indice == 1) {return new Retorno(Retorno.Resultado.OK,0,JugadoresEstandar.listarAscendentemente());}
-               if (indice ==2){return new Retorno(Retorno.Resultado.OK,0,JugadoresPro.listarAscendentemente());}
-    return null;
+
+        String Salida ="";
+        int indice = unaCategoria.getIndice();
+                switch (indice){
+                    case 0:
+                        Salida = CortarUltimo(JugadoresPrincipiante.listarAscendentemente());
+                        break;
+                    case 1:
+                        Salida = CortarUltimo(JugadoresEstandar.listarAscendentemente());
+                        break;
+                    case 2:
+                        Salida = CortarUltimo(JugadoresPro.listarAscendentemente());
+                        break;
+                    default:
+                        Salida ="";
+                }
+        return new Retorno(Retorno.Resultado.OK,0,Salida);
     }
 
     //Ejercicio 6 - Genero instancia y mando a sistema
@@ -297,8 +309,9 @@ public class ImplementacionSistema implements Sistema {
             return Retorno.error2("La sucursal ingresada no existe");
         }
         //Recorro
-        PesoYLista Salida = ConexionesSucursales.BuscarConexionLimitePeso(codigoSucursalAnfitriona,latenciaLimite);
-        return new Retorno(Retorno.Resultado.OK,Salida.getPesoMaximo(), SucursalesSist.listarAscendenteporLista(Salida.getListaSalida()));
+        ABB<Sucursal> arbolAux = new ABB<Sucursal>();
+        int Salida = BuscarConexionLimitePeso(codigoSucursalAnfitriona,latenciaLimite,ConexionesSucursales,arbolAux);
+        return new Retorno(Retorno.Resultado.OK,Salida, CortarUltimo(arbolAux.listarAscendentemente()));
     }
 
 
@@ -343,6 +356,82 @@ public class ImplementacionSistema implements Sistema {
     /*Profe, la verdad que esta funcion es un chamuyo, el unico objetivo es que cumpla con la salida del test, por ejemplo
     en los ejercios: 4-5-8-9.*/
     private String CortarUltimo(String Cadena){
-         return Cadena.substring(0,Cadena.length() - 1);
+        if (Cadena == null || Cadena.equals("")) {
+            return "";
+        }else{
+            return Cadena.substring(0, Cadena.length() - 1);
+        }
+
+    }
+
+
+
+    //Dijstra Externo
+    public int BuscarConexionLimitePeso(String vInicial, int pesoLimite,Grafo grafoObjetivo,ABB<Sucursal>arbol) {
+        //Genero estructuras basicas
+        int posOrigen = grafoObjetivo.obtenerPosVertice(vInicial);
+        boolean[] visitados = new boolean[grafoObjetivo.cantActualvertices];
+        int[] costos = new int[grafoObjetivo.cantActualvertices];
+        int[] anteriores = new int[grafoObjetivo.cantActualvertices];
+        //Los inicializo
+        int minPos;
+        for (minPos = 0; minPos < grafoObjetivo.cantActualvertices; ++minPos) {
+            visitados[minPos] = false;
+            costos[minPos] = Integer.MAX_VALUE;
+            anteriores[minPos] = -1;
+        }
+        //Marco el origen como 0, y visitado
+        costos[posOrigen] = 0;
+        visitados[posOrigen] = true;
+        //Itero sobre los demas vertices
+        for(minPos = posOrigen; minPos > -1; minPos = this.obtenerPosMenorCostoNoVisitado(costos, visitados,pesoLimite,grafoObjetivo)){
+            this.actualizarCostosAnteriores(minPos, costos, visitados, anteriores,grafoObjetivo);
+        }
+        for (int i = 0; i < visitados.length; i++) {
+            if (visitados[i]) {
+                arbol.insertar(SucursalesSist.buscarDato(new Sucursal(grafoObjetivo.vertices[i])));
+            }
+        }
+        return ObtenerPesoMaximo(costos,visitados);
+    }
+
+    private int ObtenerPesoMaximo(int[] costos,boolean[] visitados) {
+        int Salida = Integer.MIN_VALUE;
+        for (int i = 0; i < costos.length; i++) {
+            if (visitados[i]) {
+                if (costos[i] > Salida) {
+                    Salida = costos[i];
+                }
+            }
+        }
+        return Salida;
+    }
+
+    private void actualizarCostosAnteriores(int posActual, int []costos,boolean [] visitados,int []anteriores,Grafo grafoObjetivo){
+        for (int i = 0; i < grafoObjetivo.cantActualvertices; i++) {
+            if (i != posActual) {
+                int costoVerticeActual = costos[posActual] + grafoObjetivo.matAdy[posActual][i].getPeso();
+                //Tambien agrego el peso como factor, si es mayor ya no debo iterar
+                if (grafoObjetivo.matAdy[posActual][i].isExiste() && !visitados[i] && costos[i] > costoVerticeActual){
+                    costos[i] = costoVerticeActual;
+                    anteriores[i] = posActual;
+                }
+            }
+        }
+    }
+    private int obtenerPosMenorCostoNoVisitado(int[] costos, boolean[] visitados, int pesoLimite,Grafo grafoObjetivo) {
+        int minCosto = Integer.MAX_VALUE;
+        int posMenorCosto = -1;
+        for(int i = 0; i < grafoObjetivo.cantActualvertices; ++i) {
+            if (!visitados[i] && costos[i] < minCosto && costos[i] <= pesoLimite) {
+
+                minCosto = costos[i];
+                posMenorCosto = i;
+            }
+        }
+        if (posMenorCosto > -1){
+            visitados[posMenorCosto] = true;
+        }
+        return posMenorCosto;
     }
 }

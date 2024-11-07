@@ -68,7 +68,7 @@ public class ABB<T extends Comparable<T>> implements IABB<T>{
         if (this.raiz != null) {
             return listarAscendentemente(this.raiz);
         } else {
-            return "No se encontraron datos para mostrar";
+            return "";
         }
     }
 
@@ -83,7 +83,7 @@ public class ABB<T extends Comparable<T>> implements IABB<T>{
         if (this.raiz != null) {
            return listarDesc(this.raiz);
         } else {
-            return "No se encontraron datos para mostrar";
+            return null;
 
         }
     }
