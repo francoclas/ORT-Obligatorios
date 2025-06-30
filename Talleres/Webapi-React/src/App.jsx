@@ -1,14 +1,29 @@
+//Funcionalidades
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { useState } from 'react'
-import LoginPers from './Comps/Sesion/Login'
+import { store } from './store/store'
+
+//Componentes
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+import Contenedor from './Comps/App/Contenedor'
+import Registro from './Comps/Sesion/Registro'
+import Login from './Comps/Sesion/Login'
+import MenuApp from './Comps/App/Menu'
+
+const App = () => {
+
 
   return (
-    <>
-      <LoginPers/>
-    </>
+    <BrowserRouter>
+    <Routes>
+        <Route path = "/Login" element = {<Login/>}/>
+        <Route path = "/Registro" element = {<Registro/>}/>
+        <Route path = "/Menu" element = {<MenuApp/>}/>
+    </Routes>
+  </BrowserRouter>
+
+  
   )
 }
 
